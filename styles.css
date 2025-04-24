@@ -78,14 +78,6 @@ header p {
   line-height: 1.8;
 }
 
-/* Footer Styling (Optional, can be left empty) */
-footer {
-  background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent footer */
-  color: red; /* Red text in footer */
-  padding: 20px;
-  margin-top: 40px;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   header h1 {
