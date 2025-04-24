@@ -8,10 +8,10 @@
 /* Body and Base Styles */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f0f4f8;
-  background-image: url('https://media.discordapp.net/attachments/1325644345558306957/1333146593607553105/0D769CF9-B2F1-4365-9C44-75DACDC5F1C2.gif?ex=680b3044&is=6809dec4&hm=fbb8edfef9cc3f126e5d72d41a0f3bdf88851545ebba18e7b44341403717b4b8&'); /* Add your image here */
-  background-size: cover;
-  background-position: center;
+  background-image: url('https://media.discordapp.net/attachments/1325644345558306957/1333146593607553105/0D769CF9-B2F1-4365-9C44-75DACDC5F1C2.gif?ex=680b3044&is=6809dec4&hm=fbb8edfef9cc3f126e5d72d41a0f3bdf88851545ebba18e7b44341403717b4b8');
+  background-size: cover; /* Ensures the GIF covers the entire page */
+  background-position: center; /* Centers the GIF */
+  background-repeat: no-repeat; /* Prevents the GIF from repeating */
   color: #333;
   text-align: center;
   line-height: 1.6;
