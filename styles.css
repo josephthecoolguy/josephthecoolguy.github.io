@@ -38,17 +38,31 @@ p {
   margin-bottom: 25px;
 }
 
-.links a {
-  display: block;
-  background: #ff99cc;
-  color: white;
-  padding: 12px;
-  margin: 8px 0;
-  text-decoration: none;
-  border-radius: 12px;
-  transition: background 0.2s;
+/* Icon link styles */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.links a:hover {
-  background: #ff66a3;
+.icon {
+  font-size: 1.8em;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.icon.discord { background: #7289DA; }
+.icon.tiktok  { background: #000; }
+.icon.roblox  { background: #E2231A; }
+
+.icon:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
 }
