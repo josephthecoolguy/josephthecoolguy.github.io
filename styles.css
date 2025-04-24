@@ -5,98 +5,49 @@
   box-sizing: border-box;
 }
 
-/* Body and Base Styles */
+/* Page Background */
 body {
-  font-family: 'Arial', sans-serif;
-  background-image: url('https://media.discordapp.net/attachments/1325644345558306957/1333146593607553105/0D769CF9-B2F1-4365-9C44-75DACDC5F1C2.gif?ex=680b3044&is=6809dec4&hm=fbb8edfef9cc3f126e5d72d41a0f3bdf88851545ebba18e7b44341403717b4b8');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: red; /* Set default text color to red */
-  text-align: center;
-  line-height: 1.6;
-  height: 100vh; /* Ensures the background covers the whole viewport */
+  background-color: #ffe6f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 60px 20px;
+  min-height: 100vh;
 }
 
-/* Container to center content */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Header Styling with Transparency */
-header {
-  background-color: rgba(255, 99, 99, 0.5); /* Semi-transparent red background */
-  color: red; /* Red text in header */
-  padding: 60px 0;
-  text-align: center;
-  border-bottom: 5px solid #333;
-  border-radius: 12px; /* Optional, rounded corners */
-  margin-bottom: 20px; /* Space between header and content */
-}
-
-/* Header Text Styling */
-header h1 {
-  font-size: 3.5em;
+/* Profile Title */
+h1 {
+  font-size: 3em;
+  color: #d63384;
   margin-bottom: 10px;
-  text-transform: uppercase;
 }
 
-header p {
+/* Profile Subtitle / Description */
+h2 {
+  font-size: 1.5em;
+  color: #555;
+  font-weight: normal;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Status Text */
+p {
   font-size: 1.2em;
-  font-weight: bold;
+  color: #888;
+  margin-top: 10px;
 }
 
-/* Content Section Styling */
-.content {
-  padding: 50px 20px;
+/* Optional: Add hover effect */
+a {
+  color: #d63384;
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-.card {
-  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background for card */
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.card h2 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-  color: red; /* Red text in card */
-}
-
-.card p {
-  font-size: 1.2em;
-  color: red; /* Red text for content */
-  line-height: 1.8;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.5em;
-  }
-
-  header p {
-    font-size: 1em;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .card h2 {
-    font-size: 2em;
-  }
-
-  .card p {
-    font-size: 1em;
-  }
+a:hover {
+  text-decoration: underline;
 }
