@@ -12,7 +12,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #333;
+  color: red; /* Set default text color to red */
   text-align: center;
   line-height: 1.6;
   height: 100vh; /* Ensures the background covers the whole viewport */
@@ -31,7 +31,7 @@ body {
 /* Header Styling with Transparency */
 header {
   background-color: rgba(255, 99, 99, 0.5); /* Semi-transparent red background */
-  color: white;
+  color: red; /* Red text in header */
   padding: 60px 0;
   text-align: center;
   border-bottom: 5px solid #333;
@@ -69,19 +69,19 @@ header p {
 .card h2 {
   font-size: 2.5em;
   margin-bottom: 15px;
-  color: #ff6363;
+  color: red; /* Red text in card */
 }
 
 .card p {
   font-size: 1.2em;
-  color: #fff; /* White text for better contrast */
+  color: red; /* Red text for content */
   line-height: 1.8;
 }
 
 /* Footer Styling (Optional, can be left empty) */
 footer {
   background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent footer */
-  color: white;
+  color: red; /* Red text in footer */
   padding: 20px;
   margin-top: 40px;
 }
