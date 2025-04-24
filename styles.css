@@ -1,46 +1,54 @@
-/* Apply full-screen background */
 body {
   margin: 0;
   padding: 0;
+  background: linear-gradient(135deg, #ffe6f0, #ffcfe2);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('https://media.discordapp.net/attachments/1325644345558306957/1333146593607553105/0D769CF9-B2F1-4365-9C44-75DACDC5F1C2.gif');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
 }
 
-/* Container with transparent background for readability */
-.container {
-  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+.card {
+  background: white;
   padding: 40px;
-  border-radius: 20px;
-  max-width: 600px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   text-align: center;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  max-width: 320px;
+  width: 90%;
 }
 
-/* Main title */
-h1 {
-  font-size: 3em;
-  color: #ff99cc;
+.avatar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   margin-bottom: 15px;
 }
 
-/* Subtitle / bio */
-h2 {
-  font-size: 1.4em;
-  font-weight: normal;
-  color: #f0f0f0;
-  margin-bottom: 20px;
+h1 {
+  font-size: 2em;
+  margin: 10px 0;
+  color: #ff66a3;
 }
 
-/* Status text */
 p {
-  font-size: 1.2em;
-  color: #ccc;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.links a {
+  display: block;
+  background: #ff99cc;
+  color: white;
+  padding: 12px;
+  margin: 8px 0;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.links a:hover {
+  background: #ff66a3;
 }
