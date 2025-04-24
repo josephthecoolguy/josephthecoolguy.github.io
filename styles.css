@@ -1,53 +1,43 @@
-/* General Reset */
-* {
+/* Background and Layout */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Page Background */
-body {
-  background-color: #ffe6f0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  background-image: url('https://media.discordapp.net/attachments/1325644345558306957/1333146593607553105/0D769CF9-B2F1-4365-9C44-75DACDC5F1C2.gif?ex=680b3044&is=6809dec4&hm=fbb8edfef9cc3f126e5d72d41a0f3bdf88851545ebba18e7b44341403717b4b8&');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 60px 20px;
-  min-height: 100vh;
+  height: 100vh;
+  color: #fff;
 }
 
-/* Profile Title */
+/* Semi-transparent text container */
+.container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
 h1 {
   font-size: 3em;
-  color: #d63384;
+  color: #ff99cc;
   margin-bottom: 10px;
 }
 
-/* Profile Subtitle / Description */
 h2 {
   font-size: 1.5em;
-  color: #555;
   font-weight: normal;
-  max-width: 600px;
-  text-align: center;
-  margin-bottom: 30px;
+  color: #f0f0f0;
+  margin-bottom: 20px;
 }
 
-/* Status Text */
 p {
   font-size: 1.2em;
-  color: #888;
-  margin-top: 10px;
-}
-
-/* Optional: Add hover effect */
-a {
-  color: #d63384;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-a:hover {
-  text-decoration: underline;
+  color: #ccc;
 }
