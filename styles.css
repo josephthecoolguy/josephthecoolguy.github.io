@@ -1,17 +1,19 @@
+/* Set up full screen black background */
 body {
   margin: 0;
   padding: 0;
   background-color: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.center p {
+/* Centered text styling */
+.center {
+  color: #fff;
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
