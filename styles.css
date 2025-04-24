@@ -9,29 +9,37 @@
 body {
   font-family: 'Arial', sans-serif;
   background-image: url('https://media.discordapp.net/attachments/1325644345558306957/1333146593607553105/0D769CF9-B2F1-4365-9C44-75DACDC5F1C2.gif?ex=680b3044&is=6809dec4&hm=fbb8edfef9cc3f126e5d72d41a0f3bdf88851545ebba18e7b44341403717b4b8');
-  background-size: cover; /* Ensures the GIF covers the entire page */
-  background-position: center; /* Centers the GIF */
-  background-repeat: no-repeat; /* Prevents the GIF from repeating */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #333;
   text-align: center;
   line-height: 1.6;
+  height: 100vh; /* Ensures the background covers the whole viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Container to center content */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Header Styling */
+/* Header Styling with Transparency */
 header {
-  background-color: rgba(255, 99, 99, 0.7); /* Semi-transparent red background */
+  background-color: rgba(255, 99, 99, 0.5); /* Semi-transparent red background */
   color: white;
   padding: 60px 0;
   text-align: center;
   border-bottom: 5px solid #333;
+  border-radius: 12px; /* Optional, rounded corners */
+  margin-bottom: 20px; /* Space between header and content */
 }
 
+/* Header Text Styling */
 header h1 {
   font-size: 3.5em;
   margin-bottom: 10px;
@@ -43,13 +51,13 @@ header p {
   font-weight: bold;
 }
 
-/* Content Section */
+/* Content Section Styling */
 .content {
   padding: 50px 20px;
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background for card */
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -66,13 +74,13 @@ header p {
 
 .card p {
   font-size: 1.2em;
-  color: #555;
+  color: #fff; /* White text for better contrast */
   line-height: 1.8;
 }
 
 /* Footer Styling (Optional, can be left empty) */
 footer {
-  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent footer */
   color: white;
   padding: 20px;
   margin-top: 40px;
