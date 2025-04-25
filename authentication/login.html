@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/assets/css/authentication.css">
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://cdn.zuxi.dev/assets/img/zuxi-logo-v2.png" alt="Your Image Alt Text">
+    </div>
+    <div id="container">
+        <div class="custom-alert custom-alert-info text-font" id="infodata">
+            Welcome Back - Login
+        </div>
+        <div class="spacer"></div>
+        <form method="POST" id="loginfourm">
+            <input class="text-font" type="text" id="username" name="username" placeholder="Username" minlength="3"
+                required>
+            <input class="text-font" type="password" placeholder="Password" minlength="3" name="password" required>
+            <button class="custom-button text-font" onclick="handleFormSubmit(event, this.form)">Login</button>
+        </form>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <button class="custom-button text-font" onclick="discordlogin()" style="background-color: #7882F3;">Login with
+            Discord</button>
+        <div class="spacer"></div>
+        <div class="text-center text-font"><small class="mr-25">Don't have an account? </small><a
+                href="register"><small>Sign up</small></a>
+        </div>
+    </div>
+    <script src="/assets/js/authentication.js"></script>
+</body>
+</html>

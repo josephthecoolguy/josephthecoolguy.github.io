@@ -1,0 +1,149 @@
+@import url(https://cdn.imzuxi.com/assets/fonts/fonts.css);
+body {
+    background-color: #2c3e50;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://cdn.zuxi.dev/assets/img/logolarge.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative; /* Added relative positioning to set up absolute positioning for child elements */
+}
+
+.text-font {
+    font-family: Quicksand, sans-serif;
+    overflow: overlay;
+}
+
+.image-container {
+    width: 20.5rem;
+    margin: auto;
+    position: absolute;
+    top: calc(50% - 30px - 20.5rem); /* Center vertically and add 30px spacing */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#container {
+    margin-top: 30px; /* Adjust the margin to create space between image and container */
+    position: absolute;
+    top: calc(50% + 30px); /* Center vertically and add 30px spacing */
+
+    font-family: 'Quicksand', monospace;
+    max-width: 1200px;
+    min-width: 300px;
+    margin: auto;
+    background-color: #34495e;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    scroll-behavior: smooth;
+    color: #3498db;
+    width: 20%;
+    margin-top: 30px; /* Adjust the margin to create space between image and container */
+    position: absolute;
+    top: 50%; /* Center the container vertically */
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 600px) {
+    #container {
+        width: 90%;
+    }
+}
+
+.spacer {
+    height: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #2c3e50;
+    border: none;
+    font-size: 16px;
+    color: white;
+}
+
+.custom-alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    visibility: shown;
+    text-align: center;
+   
+}
+
+.custom-alert-error {
+    color: white;
+    background-color: #e74c3c; /* Red background color */
+    border-color: #e74c3c; /* Red border color */
+}
+.custom-alert-info {
+    color: white;
+    background-color: #34495e;
+    border-color: #34495e;
+}
+
+.custom-button {
+    width: 100%;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+}
+
+.top-centered-image {
+    position: absolute;
+    visibility: shown;
+    vertical-align: center;
+    width: 20.5rem;
+    top: 0;
+    z-index: 1000;
+}
+
+#zuxiheader {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 40%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+@keyframes moveLogo {
+    0% {
+        top: -300px;
+    }
+    100% {
+        background: rgba(0, 0, 0, 0);
+        top: -68vh;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
