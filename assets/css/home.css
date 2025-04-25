@@ -423,6 +423,3 @@ a:not([href]):hover {
     color: inherit;
     text-decoration: none
 }
-#left-time-elapsed {
-    display: none;
-}
