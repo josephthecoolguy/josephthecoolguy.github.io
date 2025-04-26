@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head></head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph</title>
@@ -12,63 +12,43 @@
     <meta property="og:image" content="">
     <meta property="og:description" content="Bow before your pixel-perfect prince. Femboy Joseph is running skids off the web, one byte at a time.">
     <meta property="og:title" content="Femboy Joseph Runs All Of Com">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bow before your pixel-perfect prince. Femboy Joseph is running skids off the web, one byte at a time.">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
     
-    <!-- Add your style tag here -->
     <style>
         #left-time-elapsed {
             display: none;
         }
-#profile-image {
-    border-radius: 50%; /* Makes the image circular */
-    width: 70px; /* Adjust the size of the image */
-    height: 70px; /* Ensure it's a perfect circle */
-    object-fit: cover; /* Ensures the image fits inside the circle without distortion */
-    border: none; /* Removes any border */
-    background: none; /* Removes any background color */
-}
+
+        #profile-image {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border: none;
+            background: none;
+        }
     </style>
 </head>
-<script>
-    const text = "Hot Sexy Femboy That Runs All Of Com.";
-    const typewriterText = document.getElementById('typewriter-text');
-    let index = 0;
 
-    function typeWriter() {
-        if (index < text.length) {
-            typewriterText.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 100); // speed (lower = faster)
-        }
-    }
-
-    window.onload = typeWriter;
-</script>
 <body>
- 
-
-    
     <div id="container-wrapper">
         <div id="container">
             <video playsinline="" autoplay="" muted="" loop="" id="VIDEO" onclick="mute()">
                 <source src="" type="video/mp4">
             </video>
             <div id="text-container">
-
-                 <img src="https://cdn.discordapp.com/attachments/1364892832480890952/1365182363994165298/29297eef97e3aa73cfadbb06850ca4a1.jpg?ex=680c60a7&is=680b0f27&hm=3d3baf490f6ca376a1deb2185bd726406d7f013fc01bd729e572cf27e794dc83&" alt="Profile Image" id="profile-image">
+                <img src="https://cdn.discordapp.com/attachments/1364892832480890952/1365182363994165298/29297eef97e3aa73cfadbb06850ca4a1.jpg?ex=680c60a7&is=680b0f27&hm=3d3baf490f6ca376a1deb2185bd726406d7f013fc01bd729e572cf27e794dc83&" alt="Profile Image" id="profile-image">
                 <div id="text-content">
                     <h1>Joseph</h1>
-                    <p id="typewriter-text"></p> <!-- Empty initially -->
+                    <p id="typewriter-text"></p>
                 </div>
             </div>
             <hr>
             <div class="additional-box-container">
                 <div class="additional-box">
-
                     <div class="box-content" id="left-content">
                         <p id="left-top-info" class="small-text">Current Activity</p>
                         <h2 id="left-title">VRChat</h2>
@@ -83,13 +63,10 @@
                 </div>
             </div>
 
-
-
             <div class="full-width-box">
                 <div class="progress-content">
                     <div class="progress-image" id="progress-image">
-                        <img class="progress-image" id="song-image" src="https://i.scdn.co/image/ab67616d00001e029bc76f8c4543e1b9403cb292"
-                            alt="Album Cover">
+                        <img class="progress-image" id="song-image" src="https://i.scdn.co/image/ab67616d00001e029bc76f8c4543e1b9403cb292" alt="Album Cover">
                     </div>
                     <div class="progress-details">
                         <p id="title">Currently Listening To</p>
@@ -101,7 +78,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="full-width-box invisible mobile-hidden"></div>
             <div id="social-contaner">
@@ -120,13 +96,29 @@
             </div>
         </div>
     </div>
+
+    <!-- Your main scripts -->
     <!-- <script src="https://cdn.imzuxi.com/assets/js/home.min.js?cb=47"></script>-->
     <!-- <script src="script.js"></script>
     <script src="info.js"></script>-->
     <script src="assets/js/home.js"></script>
 
+    <!-- Typewriter Script (placed last so everything loads first) -->
+    <script>
+        const text = "Hot Sexy Femboy That Runs All Of Com.";
+        const typewriterText = document.getElementById('typewriter-text');
+        let index = 0;
 
+        function typeWriter() {
+            if (index < text.length) {
+                typewriterText.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // speed (lower = faster)
+            }
+        }
 
+        window.addEventListener('load', typeWriter);
+    </script>
 </body>
 
 </html>
