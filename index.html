@@ -16,40 +16,41 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
-    
+
     <style>
-<style>
         #left-time-elapsed {
             display: none;
         }
-    #profile-image {
-        border-radius: 50%;
-        width: 70px;
-        height: 70px;
-        object-fit: cover;
-        border: none;
-        background: none;
-    }
 
-    #typewriter-text::after {
-        content: '|';
-        animation: blink 1s steps(2, start) infinite;
-        margin-left: 4px;
-    }
+        #profile-image {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border: none;
+            background: none;
+        }
 
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-</style>
+        #typewriter-text::after {
+            content: '|';
+            animation: blink 1s steps(2, start) infinite;
+            margin-left: 4px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 
 <body>
     <div id="container-wrapper">
         <div id="container">
-            <video playsinline="" autoplay="" muted="" loop="" id="VIDEO" onclick="mute()">
+            <video playsinline autoplay muted loop id="VIDEO" onclick="mute()">
                 <source src="" type="video/mp4">
             </video>
+
             <div id="text-container">
                 <img src="https://cdn.discordapp.com/attachments/1364892832480890952/1365182363994165298/29297eef97e3aa73cfadbb06850ca4a1.jpg?ex=680c60a7&is=680b0f27&hm=3d3baf490f6ca376a1deb2185bd726406d7f013fc01bd729e572cf27e794dc83&" alt="Profile Image" id="profile-image">
                 <div id="text-content">
@@ -57,7 +58,9 @@
                     <p id="typewriter-text"></p>
                 </div>
             </div>
+
             <hr>
+
             <div class="additional-box-container">
                 <div class="additional-box">
                     <div class="box-content" id="left-content">
@@ -91,6 +94,7 @@
             </div>
 
             <div class="full-width-box invisible mobile-hidden"></div>
+
             <div id="social-contaner">
                 <ul>
                     <li>
@@ -102,19 +106,12 @@
                         <a href="https://discord.gg/ait" target="_blank" aria-label="discord-link">
                             <i class="fab fa-discord"></i>
                         </a>
-                    </li>             
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <!-- Your main scripts -->
-    <!-- <script src="https://cdn.imzuxi.com/assets/js/home.min.js?cb=47"></script>-->
-    <!-- <script src="script.js"></script>
-    <script src="info.js"></script>-->
-    <script src="assets/js/home.js"></script>
-
-    <!-- Typewriter Script (placed last so everything loads first) -->
     <script>
         const text = "Hot Sexy Femboy That Runs All Of Com.";
         const typewriterText = document.getElementById('typewriter-text');
@@ -124,12 +121,14 @@
             if (index < text.length) {
                 typewriterText.innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeWriter, 100); // speed (lower = faster)
+                setTimeout(typeWriter, 100);
             }
         }
 
-        window.addEventListener('load', typeWriter);
+        window.onload = typeWriter;
     </script>
+
+    <script src="assets/js/home.js"></script>
 </body>
 
 </html>
