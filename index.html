@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph</title>
-    <link rel="icon" type="image/png" href="https://josephthecoolguy.github.io/assets/img/5496c28fd7eacb19efe2001ec45a509e.png" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Joseph, gaysex, im gay" />
-    <meta name="author" content="Joseph" />
-    <meta property="og:image" content="" />
-    <meta property="og:description" content="Bow before your pixel-perfect prince. Femboy Joseph is running skids off the web, one byte at a time." />
-    <meta property="og:title" content="Femboy Joseph Runs All Of Com" />
-    <meta name="description" content="Bow before your pixel-perfect prince. Femboy Joseph is running skids off the web, one byte at a time." />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="assets/css/home.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous" />
-
+    <link rel="icon" type="image/png" href="https://josephthecoolguy.github.io/assets/img/5496c28fd7eacb19efe2001ec45a509e.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Joseph, gaysex, im gay">
+    <meta name="author" content="Joseph">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Bow before your pixel-perfect prince. Femboy Joseph is running skids off the web, one byte at a time.">
+    <meta property="og:title" content="Femboy Joseph Runs All Of Com">
+    <meta name="description" content="Bow before your pixel-perfect prince. Femboy Joseph is running skids off the web, one byte at a time.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
+    
     <style>
         #left-time-elapsed {
             display: none;
@@ -31,15 +31,13 @@
             background: none;
         }
 
-        #typewriter-text::after {
-            content: '|';
-            animation: blink 1s steps(2, start) infinite;
-            margin-left: 4px;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+        #typewriter-text {
+            color: white;
+            font-size: 1rem;
+            font-family: monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid white;
         }
     </style>
 </head>
@@ -48,19 +46,16 @@
     <div id="container-wrapper">
         <div id="container">
             <video playsinline autoplay muted loop id="VIDEO" onclick="mute()">
-                <source src="" type="video/mp4" />
+                <source src="" type="video/mp4">
             </video>
-
             <div id="text-container">
-                <img src="https://cdn.discordapp.com/attachments/1364892832480890952/1365182363994165298/29297eef97e3aa73cfadbb06850ca4a1.jpg?ex=680c60a7&is=680b0f27&hm=3d3baf490f6ca376a1deb2185bd726406d7f013fc01bd729e572cf27e794dc83&" alt="Profile Image" id="profile-image" />
+                <img src="https://cdn.discordapp.com/attachments/1364892832480890952/1365182363994165298/29297eef97e3aa73cfadbb06850ca4a1.jpg" alt="Profile Image" id="profile-image">
                 <div id="text-content">
                     <h1>Joseph</h1>
                     <p id="typewriter-text"></p>
                 </div>
             </div>
-
-            <hr />
-
+            <hr>
             <div class="additional-box-container">
                 <div class="additional-box">
                     <div class="box-content" id="left-content">
@@ -80,7 +75,7 @@
             <div class="full-width-box">
                 <div class="progress-content">
                     <div class="progress-image" id="progress-image">
-                        <img class="progress-image" id="song-image" src="https://i.scdn.co/image/ab67616d00001e029bc76f8c4543e1b9403cb292" alt="Album Cover" />
+                        <img class="progress-image" id="song-image" src="https://i.scdn.co/image/ab67616d00001e029bc76f8c4543e1b9403cb292" alt="Album Cover">
                     </div>
                     <div class="progress-details">
                         <p id="title">Currently Listening To</p>
@@ -94,7 +89,6 @@
             </div>
 
             <div class="full-width-box invisible mobile-hidden"></div>
-
             <div id="social-contaner">
                 <ul>
                     <li>
@@ -119,29 +113,23 @@
         let index = 0;
         let deleting = false;
 
-        function typeWriterLoop() {
-            if (!deleting && index <= text.length) {
-                typewriterText.innerHTML = text.substring(0, index);
+        setInterval(() => {
+            if (!deleting) {
+                typewriterText.textContent = text.substring(0, index);
                 index++;
-                setTimeout(typeWriterLoop, 100);
-            } else if (deleting && index >= 0) {
-                typewriterText.innerHTML = text.substring(0, index);
+                if (index > text.length) {
+                    deleting = true;
+                    index = text.length;
+                }
+            } else {
+                typewriterText.textContent = text.substring(0, index);
                 index--;
-                setTimeout(typeWriterLoop, 50);
+                if (index < 0) {
+                    deleting = false;
+                    index = 0;
+                }
             }
-
-            if (index > text.length) {
-                deleting = true;
-                setTimeout(typeWriterLoop, 800); // pause before deleting
-            }
-
-            if (index < 0) {
-                deleting = false;
-                setTimeout(typeWriterLoop, 500); // pause before typing again
-            }
-        }
-
-        window.onload = typeWriterLoop;
+        }, 100);
     </script>
 
     <script src="assets/js/home.js"></script>
