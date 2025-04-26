@@ -31,32 +31,36 @@
             background: none;
         }
 
-        #typewriter-text {
-            color: white;
-            font-size: 1rem;
-            font-family: monospace;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 2px solid white;
+        #typewriter-text::after {
+            content: '|';
+            animation: blink 1s steps(2, start) infinite;
+            margin-left: 4px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
     </style>
 </head>
 
 <body>
-
     <div id="container-wrapper">
         <div id="container">
             <video playsinline autoplay muted loop id="VIDEO" onclick="mute()">
                 <source src="" type="video/mp4">
             </video>
+
             <div id="text-container">
-                <img src="https://cdn.discordapp.com/attachments/1364892832480890952/1365182363994165298/29297eef97e3aa73cfadbb06850ca4a1.jpg" alt="Profile Image" id="profile-image">
+                <img src="https://cdn.discordapp.com/attachments/1364892832480890952/1365182363994165298/29297eef97e3aa73cfadbb06850ca4a1.jpg?ex=680c60a7&is=680b0f27&hm=3d3baf490f6ca376a1deb2185bd726406d7f013fc01bd729e572cf27e794dc83&" alt="Profile Image" id="profile-image">
                 <div id="text-content">
                     <h1>Joseph</h1>
                     <p id="typewriter-text"></p>
                 </div>
             </div>
+
             <hr>
+
             <div class="additional-box-container">
                 <div class="additional-box">
                     <div class="box-content" id="left-content">
@@ -90,6 +94,7 @@
             </div>
 
             <div class="full-width-box invisible mobile-hidden"></div>
+
             <div id="social-contaner">
                 <ul>
                     <li>
@@ -109,34 +114,21 @@
 
     <script>
         const text = "Hot Sexy Femboy That Runs All Of Com.";
-        const typewriter = document.getElementById("typewriter-text");
-        let i = 0;
-        let deleting = false;
+        const typewriterText = document.getElementById('typewriter-text');
+        let index = 0;
 
-        function loopTypewriter() {
-            if (!deleting) {
-                typewriter.textContent = text.slice(0, i++);
-                if (i > text.length) {
-                    deleting = true;
-                    setTimeout(loopTypewriter, 1000); // pause before deleting
-                    return;
-                }
-            } else {
-                typewriter.textContent = text.slice(0, i--);
-                if (i < 0) {
-                    deleting = false;
-                    setTimeout(loopTypewriter, 500); // pause before retyping
-                    return;
-                }
+        function typeWriter() {
+            if (index < text.length) {
+                typewriterText.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
             }
-            setTimeout(loopTypewriter, 100);
         }
 
-        window.onload = loopTypewriter;
+        window.onload = typeWriter;
     </script>
 
     <script src="assets/js/home.js"></script>
-
 </body>
 
 </html>
