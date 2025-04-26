@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
-    
+
     <style>
         #left-time-elapsed {
             display: none;
@@ -43,6 +43,7 @@
 </head>
 
 <body>
+
     <div id="container-wrapper">
         <div id="container">
             <video playsinline autoplay muted loop id="VIDEO" onclick="mute()">
@@ -108,31 +109,34 @@
 
     <script>
         const text = "Hot Sexy Femboy That Runs All Of Com.";
-        const typewriterText = document.getElementById("typewriter-text");
-
-        let index = 0;
+        const typewriter = document.getElementById("typewriter-text");
+        let i = 0;
         let deleting = false;
 
-        setInterval(() => {
+        function loopTypewriter() {
             if (!deleting) {
-                typewriterText.textContent = text.substring(0, index);
-                index++;
-                if (index > text.length) {
+                typewriter.textContent = text.slice(0, i++);
+                if (i > text.length) {
                     deleting = true;
-                    index = text.length;
+                    setTimeout(loopTypewriter, 1000); // pause before deleting
+                    return;
                 }
             } else {
-                typewriterText.textContent = text.substring(0, index);
-                index--;
-                if (index < 0) {
+                typewriter.textContent = text.slice(0, i--);
+                if (i < 0) {
                     deleting = false;
-                    index = 0;
+                    setTimeout(loopTypewriter, 500); // pause before retyping
+                    return;
                 }
             }
-        }, 100);
+            setTimeout(loopTypewriter, 100);
+        }
+
+        window.onload = loopTypewriter;
     </script>
 
     <script src="assets/js/home.js"></script>
+
 </body>
 
 </html>
