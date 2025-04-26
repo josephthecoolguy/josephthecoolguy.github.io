@@ -18,19 +18,31 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
     
     <style>
-        #left-time-elapsed {
-            display: none;
-        }
+        <style>
+    #left-time-elapsed {
+        display: none;
+    }
 
-        #profile-image {
-            border-radius: 50%;
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border: none;
-            background: none;
-        }
-    </style>
+    #profile-image {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border: none;
+        background: none;
+    }
+
+    #typewriter-text::after {
+        content: '|';
+        animation: blink 1s steps(2, start) infinite;
+        margin-left: 4px;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+</style>
 </head>
 
 <body>
