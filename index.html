@@ -33,6 +33,21 @@
 }
     </style>
 </head>
+<script>
+    const text = "Hot Sexy Femboy That Runs All Of Com.";
+    const typewriterText = document.getElementById('typewriter-text');
+    let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+            typewriterText.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100); // speed (lower = faster)
+        }
+    }
+
+    window.onload = typeWriter;
+</script>
 <body>
  
 
