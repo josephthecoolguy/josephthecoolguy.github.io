@@ -68,7 +68,7 @@ function handlePeriodicUpdate(songData) {
 async function FetchAndUpdateData() {
     try {
         // Fetch data from the API
-        const response = await fetch('https://imzuxi.com/api/v7/redis/zuxistatus');
+        const response = await fetch('');
 
         if (response.status == 403) {
             location.reload();
