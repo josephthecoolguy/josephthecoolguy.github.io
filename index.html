@@ -18,40 +18,30 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
 
     <style>
-    #container-wrapper,
-    #container,
-    .additional-box,
-    .full-width-box {
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-    }
+        #left-time-elapsed {
+            display: none;
+        }
 
-    /* Existing styles... */
-    #left-time-elapsed {
-        display: none;
-    }
+        #profile-image {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border: none;
+            background: none;
+        }
 
-    #profile-image {
-        border-radius: 50%;
-        width: 70px;
-        height: 70px;
-        object-fit: cover;
-        border: none;
-        background: none;
-    }
+        #typewriter-text::after {
+            content: '|';
+            animation: blink 1s steps(2, start) infinite;
+            margin-left: 4px;
+        }
 
-    #typewriter-text::after {
-        content: '|';
-        animation: blink 1s steps(2, start) infinite;
-        margin-left: 4px;
-    }
-
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-</style>
-    
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 
 <body>
