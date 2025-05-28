@@ -14,9 +14,13 @@
       color: white;
       height: 100%;
       overflow: hidden;
+      user-select: none;
     }
 
-    /* Click to Enter Screen */
+    img {
+      pointer-events: none;
+    }
+
     #enter-screen {
       position: fixed;
       top: 0;
@@ -45,7 +49,6 @@
       cursor: pointer;
     }
 
-    /* Hide until clicked */
     #gallery-content {
       display: block;
       height: 100%;
@@ -94,7 +97,7 @@
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
 <!-- Music -->
 <audio id="bg-music" loop>
@@ -110,7 +113,6 @@
 <!-- Gallery Content -->
 <div id="gallery-content">
   <h1 class="rainbow-text">Gay Monkey Gallery</h1>
-
   <div class="gallery">
     <img src="https://i.pinimg.com/736x/44/f6/9c/44f69cab4db7ed527a6db3605cd8b006.jpg" alt="Image 1">
     <img src="https://i.pinimg.com/736x/4a/45/a4/4a45a4ad2c364a0ab95f56937cf8e424.jpg" alt="Image 2">
@@ -128,24 +130,38 @@
   </div>
 </div>
 
-
 <script>
   function enterGallery() {
-    // Hide entry screen
-    const enterScreen = document.getElementById('enter-screen');
-    enterScreen.style.opacity = '0';
-    setTimeout(() => enterScreen.style.display = 'none', 500);
-
-    // Enable scroll
+    document.getElementById('enter-screen').style.opacity = '0';
+    setTimeout(() => document.getElementById('enter-screen').style.display = 'none', 500);
     document.body.style.overflow = 'auto';
-
-    // Play music
     const music = document.getElementById('bg-music');
     music.volume = 0.5;
-    music.play().catch(e => {
-      console.log("Auto-play blocked. User interaction required.");
-    });
+    music.play().catch(() => {});
   }
+
+  // Redirect if dev tools are opened
+  let devtoolsOpened = false;
+  setInterval(() => {
+    const widthThreshold = window.outerWidth - window.innerWidth > 100;
+    const heightThreshold = window.outerHeight - window.innerHeight > 100;
+    if ((widthThreshold || heightThreshold) && !devtoolsOpened) {
+      devtoolsOpened = true;
+      window.location.href = "https://shattereddisk.github.io/rickroll/";
+    }
+  }, 1000);
+
+  // Prevent keyboard shortcuts
+  document.addEventListener('keydown', function (e) {
+    if (
+      e.key === 'F12' || // F12
+      (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key)) || // Ctrl+Shift+I/J/C
+      (e.ctrlKey && e.key === 'U') // Ctrl+U
+    ) {
+      e.preventDefault();
+      window.location.href = "https://shattereddisk.github.io/rickroll/";
+    }
+  });
 </script>
 
 </body>
