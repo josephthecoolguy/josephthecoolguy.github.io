@@ -2,22 +2,30 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skel</title>
-  <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/c4/b2/46/c4b246ca0fbb14b7aedfd3fe36ad3ddc.jpg" />
-  <link rel="manifest" href="/manifest.json" />
-  <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Skel, gaysex, im gay" />
-  <meta name="author" content="Skel" />
-  <meta property="og:image" content="" />
-  <meta property="og:description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time." />
-  <meta property="og:title" content="Femboy Skel Runs All Of Com" />
-  <meta name="description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="assets/css/home.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous" />
-
+  <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/c4/b2/46/c4b246ca0fbb14b7aedfd3fe36ad3ddc.jpg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Skel, gaysex, im gay">
+  <meta name="author" content="Skel">
+  <meta property="og:image" content="">
+  <meta property="og:description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time.">
+  <meta property="og:title" content="Femboy Skel Runs All Of Com">
+  <meta name="description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
   <style>
+    body {
+      user-select: none;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
     #left-time-elapsed {
       display: none;
     }
@@ -29,6 +37,15 @@
       object-fit: cover;
       border: none;
       background: none;
+    }
+
+    #song-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto;
     }
 
     #typewriter-text::after {
@@ -69,41 +86,29 @@
         0 0 8px #ffffff;
       transition: all 0.3s ease;
     }
-
-    #song-image {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 16px;
-      display: block;
-      margin: 0 auto;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
   </style>
 </head>
 
-<body>
+<body oncontextmenu="return false">
   <div id="container-wrapper">
     <div id="container">
       <div id="text-container">
-        <img src="https://r2.guns.lol/c5e889ec-dc0e-44a4-bf7d-7ed56b4f8804.jpg" alt="Profile Image" id="profile-image" />
+        <img src="https://r2.guns.lol/c5e889ec-dc0e-44a4-bf7d-7ed56b4f8804.jpg" alt="Profile Image" id="profile-image">
         <div id="text-content">
           <h1>skel</h1>
           <p id="typewriter-text"></p>
-          <button class="link-button" onclick="window.open('Gallery/', '_blank')">
-            Go to Gallery
-          </button>
+          <button class="link-button" onclick="window.open('Gallery/', '_blank')">Go to Gallery</button>
         </div>
       </div>
 
-      <hr />
+      <hr>
 
       <div class="additional-box-container">
         <div class="additional-box">
           <div class="box-content" id="left-content">
             <p id="left-top-info" class="small-text">Current Activity</p>
             <h2 id="left-title">Discord</h2>
-            <p2 id="left-description">Since 2016</p2>
+            <p id="left-description">Since 2016</p>
             <p id="left-time-elapsed" class="small-text">Time Elapsed: Loading...</p>
           </div>
         </div>
@@ -117,7 +122,7 @@
       <div class="full-width-box">
         <div class="progress-content">
           <div class="progress-image" id="progress-image">
-            <img id="song-image" src="https://i1.sndcdn.com/artworks-5Rzly7fqNFvdNMmU-NpqSbQ-t500x500.jpg" alt="Album Cover" />
+            <img class="progress-image" id="song-image" src="https://i1.sndcdn.com/artworks-5Rzly7fqNFvdNMmU-NpqSbQ-t500x500.jpg" alt="Album Cover">
           </div>
           <div class="progress-details">
             <p id="title">Currently Listening To</p>
@@ -163,6 +168,17 @@
     }
 
     window.onload = typeWriter;
+
+    // Detect dev tools open
+    let devtoolsOpen = false;
+    const element = new Image();
+    Object.defineProperty(element, 'id', {
+      get: function () {
+        devtoolsOpen = true;
+        window.location.href = "https://shattereddisk.github.io/rickroll/";
+      }
+    });
+    console.log('%c', element);
   </script>
 
   <script src="assets/js/home.js"></script>
