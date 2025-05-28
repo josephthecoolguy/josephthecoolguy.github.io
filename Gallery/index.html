@@ -23,18 +23,25 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #000;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       z-index: 1000;
       text-align: center;
+      transition: opacity 0.8s ease;
+    }
+
+    #enter-screen.fade-out {
+      opacity: 0;
+      pointer-events: none;
     }
 
     #enter-screen h1 {
-      font-size: 24px;
-      color: #aaa;
+      font-size: 28px;
+      color: #ccc;
       transition: color 0.3s ease;
     }
 
@@ -43,9 +50,8 @@
       cursor: pointer;
     }
 
-    /* Hide until clicked */
     #gallery-content {
-      display: none;
+      display: block;
       height: 100%;
       overflow-y: auto;
       padding: 20px;
@@ -86,16 +92,26 @@
       transform: scale(1.03);
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
+
+    audio {
+      display: none;
+    }
   </style>
 </head>
 <body>
+
+<!-- Music -->
+<audio id="bg-music" loop>
+  <source src="your-music-file.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 <!-- Click to Enter Screen -->
 <div id="enter-screen" onclick="enterGallery()">
   <h1>Click to Enter</h1>
 </div>
 
-<!-- Actual Gallery Content -->
+<!-- Gallery Content -->
 <div id="gallery-content">
   <h1 class="rainbow-text">Gallery</h1>
   <div class="gallery">
@@ -109,10 +125,34 @@
 </div>
 
 <script>
+  function fadeInMusic(audio, duration = 3000) {
+    let volume = 0;
+    const step = 0.05;
+    const interval = duration / (1 / step);
+    audio.volume = 0;
+    audio.play().catch(err => console.log("Playback blocked"));
+
+    const fade = setInterval(() => {
+      volume += step;
+      if (volume >= 1) {
+        volume = 1;
+        clearInterval(fade);
+      }
+      audio.volume = volume;
+    }, interval);
+  }
+
   function enterGallery() {
-    document.getElementById('enter-screen').style.display = 'none';
-    document.getElementById('gallery-content').style.display = 'block';
+    // Fade out screen
+    const enterScreen = document.getElementById('enter-screen');
+    enterScreen.classList.add('fade-out');
+    
+    // Enable scroll
     document.body.style.overflow = 'auto';
+
+    // Fade in music
+    const music = document.getElementById('bg-music');
+    fadeInMusic(music, 3000);
   }
 </script>
 
