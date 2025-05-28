@@ -1,137 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Skels Gallery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="https://i.pinimg.com/736x/37/ed/98/37ed98808fd950cd53707b36a56fb457.jpg" />
-
+  <meta charset="UTF-8">
+  <title>Audio Test</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      background-color: #111;
-      font-family: sans-serif;
+      background: black;
       color: white;
-      overflow: hidden;
-    }
-
-    /* Click to enter screen */
-    #enter-screen {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7) url('your-image.jpg') center/cover no-repeat;
-      backdrop-filter: blur(10px);
+      font-family: sans-serif;
       display: flex;
-      align-items: center;
       justify-content: center;
-      z-index: 1000;
-      transition: opacity 1s ease;
+      align-items: center;
+      height: 100vh;
     }
-
-    #enter-screen.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    #enter-button {
-      padding: 20px 40px;
+    #enter {
       font-size: 24px;
+      padding: 20px 40px;
       background: white;
       color: black;
       border: none;
       border-radius: 12px;
       cursor: pointer;
-      font-weight: bold;
-    }
-
-    h1.rainbow-text {
-      font-size: 48px;
-      text-align: center;
-      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
-      background-size: 800% 800%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowText 6s linear infinite;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
-    @keyframes rainbowText {
-      0% {
-        background-position: 0% 50%;
-      }
-      100% {
-        background-position: 100% 50%;
-      }
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
   </style>
 </head>
 <body>
 
-  <!-- Click to enter screen -->
-  <div id="enter-screen">
-    <button id="enter-button">Click to Enter</button>
-  </div>
+<button id="enter">Click to Enter</button>
 
-  <!-- Background music -->
-  <audio id="bg-music" loop>
-    <source src="assets/audios/predayed - but im just having fun.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+<audio id="bg-music" loop>
+  <source src="https://files.catbox.moe/kb3a2e.mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
 
-  <h1 class="rainbow-text">Gallery</h1>
-  <div class="gallery">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Kuifmakaak_%288721744168%29.jpg/1200px-Kuifmakaak_%288721744168%29.jpg" alt="Image 1">
-    <img src="https://files.catbox.moe/2eftwg.jpg" alt="Image 2">
-    <img src="https://placekitten.com/402/300" alt="Image 3">
-    <img src="https://placekitten.com/403/300" alt="Image 4">
-    <img src="https://placekitten.com/404/300" alt="Image 5">
-    <img src="https://placekitten.com/405/300" alt="Image 6">
-  </div>
-
-  <script>
-    const enterScreen = document.getElementById('enter-screen');
-    const enterButton = document.getElementById('enter-button');
+<script>
+  document.getElementById('enter').addEventListener('click', () => {
     const music = document.getElementById('bg-music');
-
-    enterButton.addEventListener('click', () => {
-      enterScreen.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-
-      // Play music directly from click event
-      music.volume = 1;
-      const playPromise = music.play();
-
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.warn('Audio playback failed:', error);
-        });
-      }
+    music.play().then(() => {
+      console.log("Music playing!");
+    }).catch(err => {
+      console.error("Playback blocked:", err);
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
