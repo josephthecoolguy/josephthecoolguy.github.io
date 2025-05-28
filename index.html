@@ -41,19 +41,22 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
-            .link-button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
 
-    .link-button:hover {
-      background-color: #45a049;
-    }
+        .link-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .link-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 
@@ -66,6 +69,11 @@
                 <div id="text-content">
                     <h1>skel</h1>
                     <p id="typewriter-text"></p>
+
+                    <!-- ✅ Button placed inside content, no layout shift -->
+                    <button class="link-button" onclick="location.href='another-page.html'">
+                        Go to Another Page
+                    </button>
                 </div>
             </div>
 
@@ -139,9 +147,6 @@
     </script>
 
     <script src="assets/js/home.js"></script>
-              <button class="link-button" onclick="location.href='another-page.html'">
-    Go to Another Page
-  </button>
 </body>
 
 </html>
