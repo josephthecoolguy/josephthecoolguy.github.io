@@ -1,63 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Skels Gallery</title>
-  <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/37/ed/98/37ed98808fd950cd53707b36a56fb457.jpg">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://i.pinimg.com/736x/37/ed/98/37ed98808fd950cd53707b36a56fb457.jpg" />
+
   <style>
-    html, body {
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
       margin: 0;
-      padding: 0;
       background-color: #111;
       font-family: sans-serif;
       color: white;
-      height: 100%;
       overflow: hidden;
     }
 
-    /* Click to Enter Screen */
+    /* Click to enter screen */
     #enter-screen {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7) url('your-image.jpg') center/cover no-repeat;
       backdrop-filter: blur(10px);
-      background: rgba(0, 0, 0, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       z-index: 1000;
-      text-align: center;
-      transition: opacity 0.8s ease;
+      transition: opacity 1s ease;
     }
 
-    #enter-screen.fade-out {
+    #enter-screen.hidden {
       opacity: 0;
       pointer-events: none;
     }
 
-    #enter-screen h1 {
-      font-size: 28px;
-      color: #ccc;
-      transition: color 0.3s ease;
-    }
-
-    #enter-screen:hover h1 {
-      color: #fff;
+    #enter-button {
+      padding: 20px 40px;
+      font-size: 24px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 12px;
       cursor: pointer;
+      font-weight: bold;
     }
 
-    #gallery-content {
-      display: block;
-      height: 100%;
-      overflow-y: auto;
-      padding: 20px;
-    }
-
-    .rainbow-text {
+    h1.rainbow-text {
       font-size: 48px;
       text-align: center;
       background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
@@ -66,18 +57,23 @@
       -webkit-text-fill-color: transparent;
       animation: rainbowText 6s linear infinite;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
     @keyframes rainbowText {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 15px;
+      padding: 20px;
     }
 
     .gallery img {
@@ -92,27 +88,21 @@
       transform: scale(1.03);
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
-
-    audio {
-      display: none;
-    }
   </style>
 </head>
 <body>
 
-<!-- Music -->
-<audio id="bg-music" loop>
-  <source src="assets/audios/predayed - but im just having fun.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+  <!-- Click to enter screen -->
+  <div id="enter-screen">
+    <button id="enter-button">Click to Enter</button>
+  </div>
 
-<!-- Click to Enter Screen -->
-<div id="enter-screen" onclick="enterGallery()">
-  <h1>Click to Enter</h1>
-</div>
+  <!-- Background music -->
+  <audio id="bg-music" loop>
+    <source src="assets/audios/predayed - but im just having fun.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-<!-- Gallery Content -->
-<div id="gallery-content">
   <h1 class="rainbow-text">Gallery</h1>
   <div class="gallery">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Kuifmakaak_%288721744168%29.jpg/1200px-Kuifmakaak_%288721744168%29.jpg" alt="Image 1">
@@ -122,42 +112,26 @@
     <img src="https://placekitten.com/404/300" alt="Image 5">
     <img src="https://placekitten.com/405/300" alt="Image 6">
   </div>
-</div>
 
-<script>
-  function enterGallery() {
+  <script>
     const enterScreen = document.getElementById('enter-screen');
+    const enterButton = document.getElementById('enter-button');
     const music = document.getElementById('bg-music');
 
-    // Fade out the enter screen
-    enterScreen.classList.add('fade-out');
-    document.body.style.overflow = 'auto';
+    enterButton.addEventListener('click', () => {
+      enterScreen.classList.add('hidden');
+      document.body.style.overflow = 'auto';
 
-    // Play music immediately on click (ensures browser sees it as a gesture)
-    music.volume = 0;
-    const playPromise = music.play();
+      // Play music directly from click event
+      music.volume = 1;
+      const playPromise = music.play();
 
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        // Gradually increase volume
-        let volume = 0;
-        const step = 0.05;
-        const interval = 150;
-        const fade = setInterval(() => {
-          volume += step;
-          if (volume >= 1) {
-            music.volume = 1;
-            clearInterval(fade);
-          } else {
-            music.volume = volume;
-          }
-        }, interval);
-      }).catch(error => {
-        console.log('Audio playback failed:', error);
-      });
-    }
-  }
-</script>
-
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.warn('Audio playback failed:', error);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
