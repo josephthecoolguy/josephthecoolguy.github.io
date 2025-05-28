@@ -16,7 +16,7 @@
       overflow: hidden;
     }
 
-    /* Enter overlay */
+    /* Click to Enter Screen */
     #enter-screen {
       position: fixed;
       top: 0;
@@ -45,7 +45,7 @@
       cursor: pointer;
     }
 
-    /* Gallery content */
+    /* Hide until clicked */
     #gallery-content {
       display: block;
       height: 100%;
@@ -86,4 +86,60 @@
 
     .gallery img:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Ensure audio loads but is invisible */
+    audio {
+      visibility: hidden;
+      height: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Music -->
+<audio id="bg-music" loop preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/05/audio_3e52c55816.mp3?filename=chill-ambient-112126.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Click to Enter Screen -->
+<div id="enter-screen" onclick="enterGallery()">
+  <h1>Click to Enter</h1>
+</div>
+
+<!-- Gallery Content -->
+<div id="gallery-content">
+  <h1 class="rainbow-text">Gallery</h1>
+  <div class="gallery">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Kuifmakaak_%288721744168%29.jpg/1200px-Kuifmakaak_%288721744168%29.jpg" alt="Image 1">
+    <img src="https://files.catbox.moe/2eftwg.jpg" alt="Image 2">
+    <img src="https://placekitten.com/402/300" alt="Image 3">
+    <img src="https://placekitten.com/403/300" alt="Image 4">
+    <img src="https://placekitten.com/404/300" alt="Image 5">
+    <img src="https://placekitten.com/405/300" alt="Image 6">
+  </div>
+</div>
+
+<script>
+  function enterGallery() {
+    // Hide entry screen
+    const enterScreen = document.getElementById('enter-screen');
+    enterScreen.style.opacity = '0';
+    setTimeout(() => enterScreen.style.display = 'none', 500);
+
+    // Enable scroll
+    document.body.style.overflow = 'auto';
+
+    // Play music
+    const music = document.getElementById('bg-music');
+    music.volume = 0.5;
+    music.play().catch((e) => {
+      console.warn("Playback failed:", e);
+    });
+  }
+</script>
+
+</body>
+</html>
