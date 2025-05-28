@@ -85,9 +85,16 @@
                 <div id="text-content">
                     <h1>skel</h1>
                     <p id="typewriter-text"></p>
-                 <button class="link-button" onclick="window.location.href = 'Gallery/'">
-                 Go to Gallery
-                  </button>
+                    <button class="link-button" onclick="goToGallery()">
+                     Go to Gallery
+                         </button>
+
+                       <script>
+                  function goToGallery() {
+                    // This is a user-initiated action
+                  window.location.href = 'Gallery/';
+                  }
+                </script>
                 </div>
             </div>
 
