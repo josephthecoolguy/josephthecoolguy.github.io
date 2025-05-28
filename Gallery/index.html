@@ -89,16 +89,18 @@
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
 
+    /* Ensure audio loads but is invisible */
     audio {
-      display: none;
+      visibility: hidden;
+      height: 0;
     }
   </style>
 </head>
 <body>
 
 <!-- Music -->
-<audio id="bg-music" loop>
-  <source src="your-music-file.mp3" type="audio/mpeg">
+<audio id="bg-music" loop preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/05/audio_3e52c55816.mp3?filename=chill-ambient-112126.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
@@ -133,8 +135,8 @@
     // Play music
     const music = document.getElementById('bg-music');
     music.volume = 0.5;
-    music.play().catch(e => {
-      console.log("Auto-play blocked. User interaction required.");
+    music.play().catch((e) => {
+      console.warn("Playback failed:", e);
     });
   }
 </script>
