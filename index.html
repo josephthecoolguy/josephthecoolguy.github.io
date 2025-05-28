@@ -53,14 +53,21 @@
     display: inline-block;
     margin-top: 15px;
     font-family: Quicksand, Arial, sans-serif; /* 👈 this line added */
-    transition: all 0.3s ease;
     }
         
 .link-button:hover {
-    background-color: #333333;
-    color: #FFFFFF;
-    box-shadow: 0 0 5px #FFFFFF;
-    text-shadow: 0 0 5px #FFFFFF;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #ffffff;
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.8),
+        0 0 24px rgba(255, 255, 255, 0.7),
+        0 0 32px rgba(255, 255, 255, 0.6);
+    text-shadow:
+        0 0 4px #ffffff,
+        0 0 8px #ffffff;
+    transition: all 0.3s ease;
 }
     </style>
 </head>
