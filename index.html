@@ -159,6 +159,19 @@
     </script>
 
     <script src="assets/js/home.js"></script>
+    <script>
+  function playMusicAndGo() {
+    const music = document.getElementById('entry-music');
+    music.play().then(() => {
+      setTimeout(() => {
+        window.open('Gallery/', '_blank');
+      }, 500); // Adjust delay if needed
+    }).catch((err) => {
+      alert("Audio playback was blocked. Please interact with the page first.");
+      window.open('Gallery/', '_blank');
+    });
+  }
+</script>
 </body>
 
 </html>
