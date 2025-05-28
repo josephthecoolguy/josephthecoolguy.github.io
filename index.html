@@ -2,186 +2,162 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skel</title>
-  <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/c4/b2/46/c4b246ca0fbb14b7aedfd3fe36ad3ddc.jpg">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Skel, gaysex, im gay">
-  <meta name="author" content="Skel">
-  <meta property="og:image" content="">
-  <meta property="og:description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time.">
-  <meta property="og:title" content="Femboy Skel Runs All Of Com">
-  <meta name="description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time.">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="assets/css/home.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
-  <style>
-    body {
-      user-select: none;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skel</title>
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/c4/b2/46/c4b246ca0fbb14b7aedfd3fe36ad3ddc.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Skel, gaysex, im gay">
+    <meta name="author" content="Skel">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time.">
+    <meta property="og:title" content="Femboy Skel Runs All Of Com">
+    <meta name="description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous">
 
-    body, html {
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        #left-time-elapsed {
+            display: none;
+        }
 
-    #left-time-elapsed {
-      display: none;
-    }
+        #profile-image {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border: none;
+            background: none;
+        }
 
-    #profile-image {
-      border-radius: 50%;
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border: none;
-      background: none;
-    }
+        #typewriter-text::after {
+            content: '|';
+            animation: blink 1s steps(2, start) infinite;
+            margin-left: 4px;
+        }
 
-    #song-image {
-      width: 90px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 12px;
-      display: block;
-      margin: 0 auto;
-    }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
 
-    #typewriter-text::after {
-      content: '|';
-      animation: blink 1s steps(2, start) infinite;
-      margin-left: 4px;
+.link-button {
+    padding: 10px 20px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 15px;
+    font-family: Quicksand, Arial, sans-serif; /* 👈 this line added */
     }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    .link-button {
-      padding: 10px 20px;
-      background-color: #333333;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      display: inline-block;
-      margin-top: 15px;
-      font-family: Quicksand, Arial, sans-serif;
-    }
-
-    .link-button:hover {
-      background-color: #333;
-      color: #fff;
-      border: 2px solid #ffffff;
-      box-shadow:
+        
+.link-button:hover {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #ffffff;
+    box-shadow:
         0 0 8px rgba(255, 255, 255, 0.9),
         0 0 16px rgba(255, 255, 255, 0.8),
         0 0 24px rgba(255, 255, 255, 0.7),
         0 0 32px rgba(255, 255, 255, 0.6);
-      text-shadow:
+    text-shadow:
         0 0 4px #ffffff,
         0 0 8px #ffffff;
-      transition: all 0.3s ease;
-    }
-  </style>
+    transition: all 0.3s ease;
+}
+    </style>
 </head>
 
-<body oncontextmenu="return false">
-  <div id="container-wrapper">
-    <div id="container">
-      <div id="text-container">
-        <img src="https://r2.guns.lol/c5e889ec-dc0e-44a4-bf7d-7ed56b4f8804.jpg" alt="Profile Image" id="profile-image">
-        <div id="text-content">
-          <h1>skel</h1>
-          <p id="typewriter-text"></p>
-          <button class="link-button" onclick="window.open('Gallery/', '_blank')">Go to Gallery</button>
-        </div>
-      </div>
+<body>
+    <div id="container-wrapper">
+        <div id="container">
 
-      <hr>
-
-      <div class="additional-box-container">
-        <div class="additional-box">
-          <div class="box-content" id="left-content">
-            <p id="left-top-info" class="small-text">Current Activity</p>
-            <h2 id="left-title">Discord</h2>
-            <p id="left-description">Since 2016</p>
-            <p id="left-time-elapsed" class="small-text">Time Elapsed: Loading...</p>
-          </div>
-        </div>
-        <div class="additional-box">
-          <div class="box-content" id="right-content">
-            <h2 id="right-current-time">My Current Time</h2>
-          </div>
-        </div>
-      </div>
-
-      <div class="full-width-box">
-        <div class="progress-content">
-          <div class="progress-image" id="progress-image">
-            <img class="progress-image" id="song-image" src="https://i1.sndcdn.com/artworks-5Rzly7fqNFvdNMmU-NpqSbQ-t500x500.jpg" alt="Album Cover">
-          </div>
-          <div class="progress-details">
-            <p id="title">Currently Listening To</p>
-            <p id="progress-title">Title: Dead By Dawn</p>
-            <p id="progress-artist">By: Sematary, Ghost Mountain</p>
-            <div class="progress-bar">
-              <div class="progress-indicator" id="progress-indicator"></div>
+            <div id="text-container">
+                <img src="https://r2.guns.lol/c5e889ec-dc0e-44a4-bf7d-7ed56b4f8804.jpg" alt="Profile Image" id="profile-image">
+                <div id="text-content">
+                    <h1>skel</h1>
+                    <p id="typewriter-text"></p>
+         <button class="link-button" onclick="window.open('Gallery/', '_blank')">
+                  Go to Gallery
+                     </button>
+                    </button>
+                </div>
             </div>
-          </div>
+
+            <hr>
+
+            <div class="additional-box-container">
+                <div class="additional-box">
+                    <div class="box-content" id="left-content">
+                        <p id="left-top-info" class="small-text">Current Activity</p>
+                        <h2 id="left-title">Discord</h2>
+                        <p2 id="left-description">Since 2016</p2>
+                        <p id="left-time-elapsed" class="small-text">Time Elapsed: Loading...</p>
+                    </div>
+                </div>
+                <div class="additional-box">
+                    <div class="box-content" id="right-content">
+                        <h2 id="right-current-time">My Current Time</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="full-width-box">
+                <div class="progress-content">
+                    <div class="progress-image" id="progress-image">
+                        <img class="progress-image" id="song-image" src="https://i1.sndcdn.com/artworks-5Rzly7fqNFvdNMmU-NpqSbQ-t500x500.jpg" alt="Album Cover">
+                    </div>
+                    <div class="progress-details">
+                        <p id="title">Currently Listening To</p>
+                        <p id="progress-title">Title: Dead By Dawn</p>
+                        <p id="progress-artist">By: Sematary, Ghost Mountain</p>
+                        <div class="progress-bar">
+                            <div class="progress-indicator" id="progress-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="full-width-box invisible mobile-hidden"></div>
+
+            <div id="social-contaner">
+                <ul>
+                    <li>
+                        <a href="tiktok.com/@linuxlarp" target="_blank" aria-label="tiktok-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="discord.gg/pal" target="_blank" aria-label="discord-link">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-
-      <div class="full-width-box invisible mobile-hidden"></div>
-
-      <div id="social-contaner">
-        <ul>
-          <li>
-            <a href="https://tiktok.com/@linuxlarp" target="_blank" aria-label="tiktok-link">
-              <i class="fab fa-tiktok"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://discord.gg/pal" target="_blank" aria-label="discord-link">
-              <i class="fab fa-discord"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
     </div>
-  </div>
 
-  <script>
-    const text = "Hot Sexy Femboy That Runs All Of Com.";
-    const typewriterText = document.getElementById('typewriter-text');
-    let index = 0;
+    <script>
+        const text = "Hot Sexy Femboy That Runs All Of Com.";
+        const typewriterText = document.getElementById('typewriter-text');
+        let index = 0;
 
-    function typeWriter() {
-      if (index < text.length) {
-        typewriterText.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 100);
-      }
-    }
+        function typeWriter() {
+            if (index < text.length) {
+                typewriterText.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
 
-    window.onload = typeWriter;
+        window.onload = typeWriter;
+    </script>
 
-    // Detect dev tools open
-    let devtoolsOpen = false;
-    const element = new Image();
-    Object.defineProperty(element, 'id', {
-      get: function () {
-        devtoolsOpen = true;
-        window.location.href = "https://shattereddisk.github.io/rickroll/";
-      }
-    });
-    console.log('%c', element);
-  </script>
-
-  <script src="assets/js/home.js"></script>
+    <script src="assets/js/home.js"></script>
 </body>
 
 </html>
