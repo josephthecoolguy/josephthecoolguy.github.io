@@ -72,14 +72,15 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-auto-rows: 250px;
       gap: 15px;
     }
 
     .gallery img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      height: 100%;
+      object-fit: fill; /* stretch image to fit, allow distortion */
       border-radius: 10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -128,7 +129,6 @@
     <img src="https://files.catbox.moe/ymka1p.png" alt="Image 14">
   </div>
 </div>
-
 
 <script>
   function enterGallery() {
