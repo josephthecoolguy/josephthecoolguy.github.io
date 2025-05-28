@@ -63,10 +63,10 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: auto;
-    height: 500px;
+    max-height: 90vh; /* or remove height entirely */
     background-color: #000000a1;
     border-radius: 10px;
-    overflow-y: auto;
+    overflow-y: visible;
     padding: 10px;
     scroll-behavior: smooth;
     color: #FFFFFF;
