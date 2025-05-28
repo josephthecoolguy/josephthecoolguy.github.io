@@ -37,6 +37,26 @@
       transform: scale(1.03);
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
+    @keyframes rainbowText {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.rainbow-text {
+  font-size: 48px;
+  text-align: center;
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowText 6s linear infinite;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
   </style>
 </head>
 <body>
