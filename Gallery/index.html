@@ -125,34 +125,37 @@
 </div>
 
 <script>
-  function fadeInMusic(audio, duration = 3000) {
-    let volume = 0;
-    const step = 0.05;
-    const interval = duration / (1 / step);
-    audio.volume = 0;
-    audio.play().catch(err => console.log("Playback blocked"));
-
-    const fade = setInterval(() => {
-      volume += step;
-      if (volume >= 1) {
-        volume = 1;
-        clearInterval(fade);
-      }
-      audio.volume = volume;
-    }, interval);
-  }
-
   function enterGallery() {
-    // Fade out screen
     const enterScreen = document.getElementById('enter-screen');
+    const music = document.getElementById('bg-music');
+
+    // Fade out the enter screen
     enterScreen.classList.add('fade-out');
-    
-    // Enable scroll
     document.body.style.overflow = 'auto';
 
-    // Fade in music
-    const music = document.getElementById('bg-music');
-    fadeInMusic(music, 3000);
+    // Play music immediately on click (ensures browser sees it as a gesture)
+    music.volume = 0;
+    const playPromise = music.play();
+
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        // Gradually increase volume
+        let volume = 0;
+        const step = 0.05;
+        const interval = 150;
+        const fade = setInterval(() => {
+          volume += step;
+          if (volume >= 1) {
+            music.volume = 1;
+            clearInterval(fade);
+          } else {
+            music.volume = volume;
+          }
+        }, interval);
+      }).catch(error => {
+        console.log('Audio playback failed:', error);
+      });
+    }
   }
 </script>
 
