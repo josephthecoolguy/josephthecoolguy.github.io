@@ -27,8 +27,12 @@
     }
 
     @keyframes rainbowText {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
     }
 
     .gallery {
@@ -53,18 +57,7 @@
 </head>
 <body>
 
-<script>
-window.addEventListener("DOMContentLoaded", () => {
-  const audio = new Audio("assets/audios/predayed - but im just having fun.mp3");
-  audio.loop = true;
-  audio.play().catch((err) => {
-    console.log("Autoplay blocked:", err);
-  });
-});
-</script>
-  
   <h1 class="rainbow-text">Gallery</h1>
-
   <div class="gallery">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Kuifmakaak_%288721744168%29.jpg/1200px-Kuifmakaak_%288721744168%29.jpg" alt="Image 1">
     <img src="https://files.catbox.moe/2eftwg.jpg" alt="Image 2">
@@ -74,5 +67,14 @@ window.addEventListener("DOMContentLoaded", () => {
     <img src="https://placekitten.com/405/300" alt="Image 6">
   </div>
 
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const audio = new Audio("../assets/audios/predayed - but im just having fun.mp3");
+      audio.loop = true;
+      audio.play().catch(err => {
+        console.log("Autoplay was blocked:", err);
+      });
+    });
+  </script>
 </body>
 </html>
