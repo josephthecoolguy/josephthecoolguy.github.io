@@ -85,16 +85,24 @@
                 <div id="text-content">
                     <h1>skel</h1>
                     <p id="typewriter-text"></p>
-                    <button class="link-button" onclick="goToGallery()">
-                     Go to Gallery
-                         </button>
+                    <button class="link-button" onclick="playMusicAndGo()">Go to Gallery</button>
 
-                       <script>
-                  function goToGallery() {
-                    // This is a user-initiated action
-                  window.location.href = 'Gallery/';
-                  }
-                </script>
+<script>
+function playMusicAndGo() {
+  const audio = new Audio("assets/audios/predayed - but im just having fun.mp3");
+  audio.play().then(() => {
+    // Wait half a second for browser to count interaction before redirect
+    setTimeout(() => {
+      window.location.href = "Gallery/";
+    }, 500);
+  }).catch((err) => {
+    console.error("Audio play failed:", err);
+    // Redirect anyway if it fails
+    window.location.href = "Gallery/";
+  });
+}
+</script>
+
                 </div>
             </div>
 
