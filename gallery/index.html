@@ -35,12 +35,10 @@
 
     #enter-screen h1 {
       font-size: 28px;
-      color: #ccc;
       transition: color 0.3s ease;
     }
 
     #enter-screen:hover h1 {
-      color: #fff;
       cursor: pointer;
     }
 
@@ -53,14 +51,17 @@
     }
 
     .rainbow-text {
-      font-size: 48px;
-      text-align: center;
       background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
       background-size: 800% 800%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: rainbowText 6s linear infinite;
       font-weight: bold;
+    }
+
+    .title {
+      font-size: 48px;
+      text-align: center;
       margin-bottom: 20px;
     }
 
@@ -143,7 +144,7 @@
       top: 40px;
       left: 0;
       background: #222;
-      color: #fff;
+      color: white;
       border: 1px solid #444;
       border-radius: 6px;
       padding: 8px 12px;
@@ -168,15 +169,19 @@
       opacity: 1;
     }
 
-    .tooltip-line:first-child {
+    .tooltip-line {
       display: block;
       text-align: center;
+    }
+
+    .tooltip-line.rainbow-text {
+      font-size: 13.5px;
     }
 
     .home-button {
       position: fixed;
       bottom: 20px;
-      right: 25px; /* Nudged left */
+      right: 25px;
       padding: 10px 20px;
       background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid #ccc;
@@ -193,6 +198,10 @@
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
     }
 
+    .home-button span {
+      display: inline-block;
+    }
+
   </style>
 </head>
 <body>
@@ -203,19 +212,19 @@
 </audio>
 
 <div id="enter-screen" onclick="enterGallery()">
-  <h1>Click to Enter</h1>
+  <h1 class="rainbow-text">Click to Enter</h1>
 </div>
 
 <div id="gallery-content">
   <div class="info-container" id="info-button">
     <div class="info-button">i</div>
     <div class="tooltip">
-      <span class="tooltip-line">Want to be featured?</span>
-      <span class="tooltip-line">Send a watermarked image to fakeskel on Discord.</span>
+      <span class="tooltip-line rainbow-text">Want to be featured?</span>
+      <span class="tooltip-line rainbow-text">Send a watermarked image to fakeskel on Discord.</span>
     </div>
   </div>
 
-  <h1 class="rainbow-text">Gay Monkey Gallery</h1>
+  <h1 class="title rainbow-text">Gay Monkey Gallery</h1>
 
   <div class="gallery">
     <img src="https://files.catbox.moe/66m8a5.png" class="stretch" loading="lazy">
@@ -235,7 +244,7 @@
     <img src="https://files.catbox.moe/v5gygv.png" class="stretch" loading="lazy">
   </div>
 
-  <a href="index.html" class="home-button">Go To Main Page</a>
+  <a href="index.html" class="home-button"><span class="rainbow-text">Go To Main Page</span></a>
 </div>
 
 <script>
