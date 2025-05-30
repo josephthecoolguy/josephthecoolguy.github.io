@@ -16,7 +16,6 @@
       overflow: hidden;
     }
 
-    /* Click to Enter Screen */
     #enter-screen {
       position: fixed;
       top: 0;
@@ -96,12 +95,12 @@
       display: none;
     }
 
-    /* Info Button Styles */
+    /* Info Button (inside gallery only) */
     .info-container {
       position: fixed;
       top: 15px;
-      right: 15px;
-      z-index: 1100;
+      left: 15px;
+      z-index: 500;
     }
 
     .info-button {
@@ -129,8 +128,8 @@
       padding: 8px 12px;
       position: absolute;
       top: 35px;
-      right: 0;
-      z-index: 1101;
+      left: 0;
+      z-index: 501;
       font-size: 14px;
       opacity: 0;
       transition: opacity 0.3s;
@@ -156,14 +155,14 @@
   <h1>Click to Enter</h1>
 </div>
 
-<!-- Info Button -->
-<div class="info-container">
-  <div class="info-button">i</div>
-  <div class="tooltip">This is your customizable info text. You can change me!</div>
-</div>
-
 <!-- Gallery Content -->
-<div id="gallery-content">
+<div id="gallery-content" style="display: none;">
+  <!-- Info Button now INSIDE the gallery content -->
+  <div class="info-container">
+    <div class="info-button">i</div>
+    <div class="tooltip">This is your customizable info text. You can change me!</div>
+  </div>
+
   <h1 class="rainbow-text">Gay Monkey Gallery</h1>
 
   <div class="gallery">
@@ -190,10 +189,13 @@
 <script>
   function enterGallery() {
     const enterScreen = document.getElementById('enter-screen');
+    const galleryContent = document.getElementById('gallery-content');
+
     enterScreen.style.opacity = '0';
     setTimeout(() => enterScreen.style.display = 'none', 500);
 
     document.body.style.overflow = 'auto';
+    galleryContent.style.display = 'block';
 
     const music = document.getElementById('bg-music');
     music.volume = 0.5;
