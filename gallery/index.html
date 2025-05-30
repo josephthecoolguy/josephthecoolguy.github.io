@@ -173,46 +173,50 @@
       font-size: 13.5px;
     }
 
-    .home-button {
-      position: fixed;
-      bottom: 20px;
-      right: 25px;
-      padding: 10px 24px;
-      background: #111;
-      border: none;
-      border-radius: 12px;
-      font-size: 16px;
-      text-decoration: none;
-      z-index: 999;
-      font-weight: bold;
-      background-clip: padding-box;
-      position: relative;
-    }
+.home-button {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  padding: 10px 24px;
+  background: #111;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  text-decoration: none;
+  z-index: 999;
+  font-weight: bold;
+  background-clip: padding-box;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  overflow: hidden;
+}
 
-    .home-button span {
-      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
-      background-size: 800% 800%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowText 6s linear infinite;
-    }
+.home-button span {
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowText 6s linear infinite;
+  display: inline-block;
+}
 
-    .home-button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      padding: 2px;
-      border-radius: 14px;
-      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
-      background-size: 400% 400%;
-      z-index: -1;
-      animation: rainbowText 6s linear infinite;
-      -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-    }
+.home-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 14px;
+  padding: 2px;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: rainbowText 6s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
 
   </style>
 </head>
