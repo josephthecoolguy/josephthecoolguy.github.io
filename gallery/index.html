@@ -175,29 +175,23 @@
 
     .home-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(145deg, #222, #444);
+      bottom: 15px;
+      right: 25px; /* slightly left from edge */
+      background-color: #222;
       color: white;
       padding: 10px 18px;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
       font-size: 14px;
       text-decoration: none;
-      font-weight: bold;
-      z-index: 999;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: none;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      z-index: 999;
     }
 
     .home-button:hover {
-      box-shadow:
-        0 0 8px rgba(255, 255, 255, 0.9),
-        0 0 16px rgba(255, 255, 255, 0.8),
-        0 0 24px rgba(255, 255, 255, 0.7),
-        0 0 32px rgba(255, 255, 255, 0.6);
-      transform: scale(1.05);
+      background-color: #333;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
     }
   </style>
 </head>
@@ -240,9 +234,9 @@
     <img src="https://i.pinimg.com/736x/8f/f2/c2/8ff2c2bab7ffd5b7a78a5b10d470f79b.jpg" class="stretch" loading="lazy">
     <img src="https://files.catbox.moe/v5gygv.png" class="stretch" loading="lazy">
   </div>
-</div>
 
-<a href="index.html" class="home-button">Go To Home Page</a>
+  <a href="index.html" class="home-button">Go To Main Page</a>
+</div>
 
 <script>
   function enterGallery() {
@@ -258,7 +252,6 @@
     document.body.style.overflow = 'auto';
 
     infoButton.style.display = 'block';
-    document.querySelector('.home-button').style.display = 'block';
 
     const music = document.getElementById('bg-music');
     music.volume = 0.5;
