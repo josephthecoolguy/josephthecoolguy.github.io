@@ -50,11 +50,6 @@
       filter: blur(5px);
     }
 
-    @keyframes rainbowText {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
     .rainbow-text {
       background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
       background-size: 800% 800%;
@@ -68,6 +63,11 @@
       font-size: 48px;
       text-align: center;
       margin-bottom: 20px;
+    }
+
+    @keyframes rainbowText {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
 
     .gallery {
@@ -110,12 +110,15 @@
       height: 36px;
       background: linear-gradient(145deg, #222, #444);
       border-radius: 50%;
+      color: white;
+      font-size: 18px;
+      font-family: sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 8px #fff;
+      transition: all 0.3s ease;
       user-select: none;
       line-height: 1;
       padding: 0;
@@ -123,24 +126,23 @@
       font-weight: bold;
     }
 
-    .info-button span {
-      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
-      background-size: 800% 800%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowText 6s linear infinite;
-      font-weight: bold;
-    }
-
     .info-button:hover {
       box-shadow:
-        0 0 8px rgba(255, 255, 255, 0.9),
-        0 0 16px rgba(255, 255, 255, 0.8),
-        0 0 24px rgba(255, 255, 255, 0.7),
-        0 0 32px rgba(255, 255, 255, 0.6);
+        0 0 8px red,
+        0 0 12px orange,
+        0 0 16px yellow,
+        0 0 20px green,
+        0 0 24px blue,
+        0 0 28px indigo,
+        0 0 32px violet;
       text-shadow:
-        0 0 4px #ffffff,
-        0 0 8px #ffffff;
+        0 0 4px red,
+        0 0 8px orange,
+        0 0 12px yellow,
+        0 0 16px green,
+        0 0 20px blue,
+        0 0 24px indigo,
+        0 0 28px violet;
     }
 
     .tooltip {
@@ -188,25 +190,41 @@
       position: fixed;
       bottom: 20px;
       right: 25px;
-      padding: 10px 20px;
-      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 24px;
+      background: #111;
       border: 2px solid transparent;
-      border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
-      color: white;
       border-radius: 12px;
       font-size: 16px;
       text-decoration: none;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       z-index: 999;
-    }
-
-    .home-button:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+      font-weight: bold;
+      background-clip: padding-box;
+      transition: box-shadow 0.3s ease, border 0.3s ease;
     }
 
     .home-button span {
-      display: inline-block;
+      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 6s linear infinite;
+    }
+
+    .home-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      border-radius: 14px;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+      background-size: 400% 400%;
+      z-index: -1;
+      animation: rainbowText 6s linear infinite;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
     }
 
   </style>
@@ -224,7 +242,7 @@
 
 <div id="gallery-content">
   <div class="info-container" id="info-button">
-    <div class="info-button"><span>i</span></div>
+    <div class="info-button">i</div>
     <div class="tooltip">
       <span class="tooltip-line rainbow-text">Want to be featured?</span>
       <span class="tooltip-line rainbow-text">Send a watermarked image to fakeskel on Discord.</span>
@@ -251,7 +269,7 @@
     <img src="https://files.catbox.moe/v5gygv.png" class="stretch" loading="lazy">
   </div>
 
-  <a href="index.html" class="home-button"><span class="rainbow-text">Go To Main Page</span></a>
+  <a href="index.html" class="home-button"><span>Go To Main Page</span></a>
 </div>
 
 <script>
