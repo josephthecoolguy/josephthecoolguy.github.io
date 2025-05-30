@@ -101,41 +101,28 @@
       top: 15px;
       left: 15px;
       z-index: 999;
+      display: none;
     }
 
     .info-button {
-      width: 28px;
-      height: 28px;
-      background: linear-gradient(145deg, #222, #444);
-      border: 2px solid transparent;
+      width: 24px;
+      height: 24px;
+      background: #222;
       border-radius: 50%;
       color: white;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-      position: relative;
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-
-    .info-button:hover {
-      border-color: #fff;
-      box-shadow:
-        0 0 8px rgba(255, 255, 255, 0.9),
-        0 0 16px rgba(255, 255, 255, 0.8),
-        0 0 24px rgba(255, 255, 255, 0.7),
-        0 0 32px rgba(255, 255, 255, 0.6);
-      text-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
+      cursor: default;
     }
 
     .tooltip {
       visibility: hidden;
       opacity: 0;
       position: absolute;
-      top: 35px;
+      top: 36px;
       left: 0;
       background: #222;
       color: #fff;
@@ -143,6 +130,7 @@
       border-radius: 6px;
       padding: 8px 12px;
       font-size: 14px;
+      font-family: sans-serif;
       transition: opacity 0.3s ease;
       white-space: nowrap;
     }
@@ -166,30 +154,6 @@
       display: block;
       text-align: center;
     }
-
-    /* Home Page Button */
-    .home-button {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: transparent;
-      color: white;
-      padding: 10px 20px;
-      border: 2px solid white;
-      border-radius: 12px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      z-index: 1000;
-    }
-
-    .home-button:hover {
-      box-shadow:
-        0 0 8px white,
-        0 0 16px white,
-        0 0 24px white;
-      transform: scale(1.03);
-    }
   </style>
 </head>
 <body>
@@ -212,12 +176,9 @@
     </div>
   </div>
 
-  <button class="home-button" onclick="location.href='index.html'">Go To Home Page</button>
-
   <h1 class="rainbow-text">Gay Monkey Gallery</h1>
 
   <div class="gallery">
-    <!-- Your images -->
     <img src="https://files.catbox.moe/66m8a5.png" class="stretch" loading="lazy">
     <img src="https://files.catbox.moe/l2v5d5.png" class="stretch" loading="lazy">
     <img src="https://files.catbox.moe/rcx00c.png" class="stretch" loading="lazy">
