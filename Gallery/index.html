@@ -142,11 +142,22 @@
       font-size: 14px;
       font-family: sans-serif;
       transition: opacity 0.3s ease;
-      max-width: 240px;
+      max-width: 300px;
       white-space: normal;
       text-align: left;
       line-height: 1.4;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -6px;
+      transform: translateY(-50%);
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent #222 transparent transparent;
     }
 
     .info-container:hover .tooltip {
@@ -211,15 +222,12 @@
     enterScreen.style.opacity = '0';
     setTimeout(() => enterScreen.style.display = 'none', 500);
 
-    // Enable gallery
     galleryContent.style.pointerEvents = 'auto';
     galleryContent.style.filter = 'none';
     document.body.style.overflow = 'auto';
 
-    // Show info button
     infoButton.style.display = 'block';
 
-    // Music
     const music = document.getElementById('bg-music');
     music.volume = 0.5;
     music.play().catch(e => {
