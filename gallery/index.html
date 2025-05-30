@@ -119,11 +119,22 @@
       cursor: pointer;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
       position: relative;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .info-button:hover {
       background: linear-gradient(145deg, #333, #555);
+      color: #fff;
+      border: 2px solid #ffffff;
+      box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.8),
+        0 0 24px rgba(255, 255, 255, 0.7),
+        0 0 32px rgba(255, 255, 255, 0.6);
+      text-shadow:
+        0 0 4px #ffffff,
+        0 0 8px #ffffff;
+      transition: all 0.3s ease;
     }
 
     .tooltip {
@@ -166,9 +177,8 @@
 </head>
 <body>
 
-<!-- Replace this with your actual .mp3 URL -->
 <audio id="bg-music" loop>
-  <source src="https://files.catbox.moe/zes8s3.mp3" type="audio/mpeg">
+  <source src="your-music-file.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
