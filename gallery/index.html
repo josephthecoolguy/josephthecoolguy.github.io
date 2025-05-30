@@ -50,6 +50,11 @@
       filter: blur(5px);
     }
 
+    @keyframes rainbowText {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
     .rainbow-text {
       background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
       background-size: 800% 800%;
@@ -63,11 +68,6 @@
       font-size: 48px;
       text-align: center;
       margin-bottom: 20px;
-    }
-
-    @keyframes rainbowText {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
     }
 
     .gallery {
@@ -110,9 +110,6 @@
       height: 36px;
       background: linear-gradient(145deg, #222, #444);
       border-radius: 50%;
-      color: white;
-      font-size: 18px;
-      font-family: sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -123,6 +120,15 @@
       line-height: 1;
       padding: 0;
       border: none;
+      font-weight: bold;
+    }
+
+    .info-button span {
+      background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowText 6s linear infinite;
       font-weight: bold;
     }
 
@@ -184,7 +190,8 @@
       right: 25px;
       padding: 10px 20px;
       background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid #ccc;
+      border: 2px solid transparent;
+      border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
       color: white;
       border-radius: 12px;
       font-size: 16px;
@@ -217,7 +224,7 @@
 
 <div id="gallery-content">
   <div class="info-container" id="info-button">
-    <div class="info-button">i</div>
+    <div class="info-button"><span>i</span></div>
     <div class="tooltip">
       <span class="tooltip-line rainbow-text">Want to be featured?</span>
       <span class="tooltip-line rainbow-text">Send a watermarked image to fakeskel on Discord.</span>
