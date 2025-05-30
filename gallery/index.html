@@ -104,26 +104,26 @@
       display: none;
     }
 
-.info-button {
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(145deg, #222, #444);
-  border-radius: 50%;
-  color: white;
-  font-size: 18px;
-  font-family: sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
-  line-height: 1;
-  padding: 0;
-  border: none;
-  font-weight: bold;
-}
+    .info-button {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(145deg, #222, #444);
+      border-radius: 50%;
+      color: white;
+      font-size: 18px;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      line-height: 1;
+      padding: 0;
+      border: none;
+      font-weight: bold;
+    }
 
     .info-button:hover {
       box-shadow:
@@ -172,6 +172,33 @@
       display: block;
       text-align: center;
     }
+
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(145deg, #222, #444);
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 12px;
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 999;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: none;
+    }
+
+    .home-button:hover {
+      box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.8),
+        0 0 24px rgba(255, 255, 255, 0.7),
+        0 0 32px rgba(255, 255, 255, 0.6);
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -215,6 +242,8 @@
   </div>
 </div>
 
+<a href="index.html" class="home-button">Go To Home Page</a>
+
 <script>
   function enterGallery() {
     const enterScreen = document.getElementById('enter-screen');
@@ -229,6 +258,7 @@
     document.body.style.overflow = 'auto';
 
     infoButton.style.display = 'block';
+    document.querySelector('.home-button').style.display = 'block';
 
     const music = document.getElementById('bg-music');
     music.volume = 0.5;
