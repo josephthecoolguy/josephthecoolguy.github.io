@@ -5,14 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skel</title>
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/c4/b2/46/c4b246ca0fbb14b7aedfd3fe36ad3ddc.jpg" />
-
-  <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json" />
-
-  <!-- Meta Tags -->
   <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Skel, gaysex, im gay" />
   <meta name="author" content="Skel" />
   <meta property="og:image" content="" />
@@ -20,8 +14,6 @@
   <meta property="og:title" content="Femboy Skel Runs All Of Com" />
   <meta name="description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time." />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="assets/css/home.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous" />
 
@@ -29,22 +21,25 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: #111;
-      color: white;
+      background-color: #111;
       font-family: sans-serif;
+      color: white;
       height: 100%;
       overflow: hidden;
     }
 
     #enter-screen {
       position: fixed;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background: rgba(0, 0, 0, 0.6);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       z-index: 1000;
       text-align: center;
       transition: opacity 0.5s ease;
@@ -61,14 +56,18 @@
       cursor: pointer;
     }
 
-    audio { display: none; }
+    audio {
+      display: none;
+    }
 
-    #left-time-elapsed { display: none; }
+    #left-time-elapsed {
+      display: none;
+    }
 
     #profile-image {
+      border-radius: 50%;
       width: 70px;
       height: 70px;
-      border-radius: 50%;
       object-fit: cover;
       border: none;
       background: none;
@@ -81,45 +80,48 @@
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+      0%, 100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
 
     .link-button {
-      margin-top: 15px;
       padding: 10px 20px;
-      background: #333;
+      background-color: #333333;
       color: white;
       border: none;
       border-radius: 5px;
-      font-size: 16px;
-      font-family: Quicksand, Arial, sans-serif;
       cursor: pointer;
+      font-size: 16px;
+      display: inline-block;
+      margin-top: 15px;
+      font-family: Quicksand, Arial, sans-serif;
     }
 
     .link-button:hover {
-      background: #333;
+      background-color: #333;
       color: #fff;
-      border: 2px solid #fff;
-      box-shadow:
-        0 0 8px rgba(255, 255, 255, 0.9),
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
         0 0 16px rgba(255, 255, 255, 0.8),
         0 0 24px rgba(255, 255, 255, 0.7),
         0 0 32px rgba(255, 255, 255, 0.6);
-      text-shadow: 0 0 4px #fff, 0 0 8px #fff;
+      text-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
       transition: all 0.3s ease;
     }
   </style>
 </head>
 
 <body>
-  <!-- Audio that autoplays once site is entered -->
   <audio id="bg-music" loop>
     <source src="https://files.catbox.moe/zes8s3.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
 
-  <!-- Entry Overlay -->
   <div id="enter-screen" onclick="enterSite()">
     <h1>Click to Enter</h1>
   </div>
@@ -127,19 +129,19 @@
   <div id="container-wrapper" style="filter: blur(5px); pointer-events: none;">
     <div id="container">
 
-      <!-- Profile Area -->
       <div id="text-container">
         <img src="https://r2.guns.lol/c5e889ec-dc0e-44a4-bf7d-7ed56b4f8804.jpg" alt="Profile Image" id="profile-image" />
         <div id="text-content">
           <h1>skel</h1>
           <p id="typewriter-text"></p>
-          <button class="link-button" onclick="window.location.href='gallery/'">Go to Gallery</button>
+          <button class="link-button" onclick="window.location.href='gallery/'">
+            Go to Gallery
+          </button>
         </div>
       </div>
 
       <hr />
 
-      <!-- Boxes -->
       <div class="additional-box-container">
         <div class="additional-box">
           <div class="box-content" id="left-content">
@@ -156,7 +158,6 @@
         </div>
       </div>
 
-      <!-- Now Playing -->
       <div class="full-width-box">
         <div class="progress-content">
           <div class="progress-image" id="progress-image">
@@ -175,18 +176,23 @@
 
       <div class="full-width-box invisible mobile-hidden"></div>
 
-      <!-- Social Links -->
       <div id="social-contaner">
         <ul>
-          <li><a href="https://www.tiktok.com/@linuxlarp" target="_blank" aria-label="tiktok-link"><i class="fab fa-tiktok"></i></a></li>
-          <li><a href="https://discord.gg/pal" target="_blank" aria-label="discord-link"><i class="fab fa-discord"></i></a></li>
+          <li>
+            <a href="https://www.tiktok.com/@linuxlarp" target="_blank" aria-label="tiktok-link">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://discord.gg/pal" target="_blank" aria-label="discord-link">
+              <i class="fab fa-discord"></i>
+            </a>
+          </li>
         </ul>
       </div>
-
     </div>
   </div>
 
-  <!-- Scripts -->
   <script>
     const text = "Hot Sexy Femboy That Runs All Of Com.";
     const typewriterText = document.getElementById('typewriter-text');
@@ -196,7 +202,7 @@
       if (index < text.length) {
         typewriterText.innerHTML += text.charAt(index);
         index++;
-        setTimeout(typeWriter, 100); // Slight pause between chars
+        setTimeout(typeWriter, 100);
       }
     }
 
@@ -205,7 +211,6 @@
       const wrapper = document.getElementById('container-wrapper');
       const music = document.getElementById('bg-music');
 
-      // Hide intro screen
       enterScreen.style.opacity = '0';
       setTimeout(() => enterScreen.style.display = 'none', 500);
 
@@ -213,13 +218,11 @@
       wrapper.style.filter = 'none';
       document.body.style.overflow = 'auto';
 
-      // Start the music
       music.volume = 0.5;
-      music.play().catch(err => {
-        console.warn("Autoplay probably blocked:", err);
+      music.play().catch(e => {
+        console.log("Autoplay blocked by browser. User interaction is required.");
       });
 
-      // Start typing
       typeWriter();
     }
   </script>
@@ -227,4 +230,5 @@
   <script src="assets/js/home.js"></script>
   <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
 </body>
+
 </html>
