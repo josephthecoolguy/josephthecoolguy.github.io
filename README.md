@@ -1,1 +1,1 @@
-Alot of this code is from my friend zuxi big shoutout to him.
+Alot of this code is from zuxi big shoutout to him.
