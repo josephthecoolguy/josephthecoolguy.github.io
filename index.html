@@ -7,7 +7,7 @@
   <title>Skel</title>
   <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/c4/b2/46/c4b246ca0fbb14b7aedfd3fe36ad3ddc.jpg" />
   <link rel="manifest" href="/manifest.json" />
-  <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Skel, gaysex, im gay" />
+  <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Skel" />
   <meta name="author" content="Skel" />
   <meta property="og:image" content="" />
   <meta property="og:description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time." />
@@ -60,10 +60,6 @@
       display: none;
     }
 
-    #left-time-elapsed {
-      display: none;
-    }
-
     #profile-image {
       border-radius: 50%;
       width: 70px;
@@ -83,7 +79,6 @@
       0%, 100% {
         opacity: 1;
       }
-
       50% {
         opacity: 0;
       }
@@ -91,7 +86,7 @@
 
     .link-button {
       padding: 10px 20px;
-      background-color: #333333;
+      background-color: #333;
       color: white;
       border: none;
       border-radius: 5px;
@@ -105,13 +100,40 @@
     .link-button:hover {
       background-color: #333;
       color: #fff;
-      border: 2px solid #ffffff;
+      border: 2px solid #fff;
       box-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
-        0 0 16px rgba(255, 255, 255, 0.8),
-        0 0 24px rgba(255, 255, 255, 0.7),
-        0 0 32px rgba(255, 255, 255, 0.6);
-      text-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
+                  0 0 16px rgba(255, 255, 255, 0.8),
+                  0 0 24px rgba(255, 255, 255, 0.7),
+                  0 0 32px rgba(255, 255, 255, 0.6);
+      text-shadow: 0 0 4px #fff, 0 0 8px #fff;
       transition: all 0.3s ease;
+    }
+
+    #social-contaner {
+      margin-top: 40px;
+    }
+
+    #social-contaner ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    #social-contaner a {
+      color: white;
+      font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    #social-contaner a:hover {
+      color: #999;
+    }
+
+    #container {
+      text-align: center;
+      margin-top: 100px;
     }
   </style>
 </head>
@@ -134,47 +156,11 @@
         <div id="text-content">
           <h1>skel</h1>
           <p id="typewriter-text"></p>
-          <button class="link-button" onclick="window.location.href='gallery/'">
-            Go to Gallery
-          </button>
+          <button class="link-button" onclick="window.location.href='gallery/'">Go to Gallery</button>
         </div>
       </div>
 
       <hr />
-
-      <div class="additional-box-container">
-        <div class="additional-box">
-          <div class="box-content" id="left-content">
-            <p id="left-top-info" class="small-text">Current Activity</p>
-            <h2 id="left-title">Discord</h2>
-            <p2 id="left-description">Since 2016</p2>
-            <p id="left-time-elapsed" class="small-text">Time Elapsed: Loading...</p>
-          </div>
-        </div>
-        <div class="additional-box">
-          <div class="box-content" id="right-content">
-            <h2 id="right-current-time">My Current Time</h2>
-          </div>
-        </div>
-      </div>
-
-      <div class="full-width-box">
-        <div class="progress-content">
-          <div class="progress-image" id="progress-image">
-            <img class="progress-image" id="song-image" src="https://i.scdn.co/image/ab67616d00001e02e340679cab11387b4c97903c" alt="Album Cover" />
-          </div>
-          <div class="progress-details">
-            <p id="title">Currently Listening To</p>
-            <p id="progress-title">Title: Black Beatles</p>
-            <p id="progress-artist">By: EsDeeKid</p>
-            <div class="progress-bar">
-              <div class="progress-indicator" id="progress-indicator"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="full-width-box invisible mobile-hidden"></div>
 
       <div id="social-contaner">
         <ul>
@@ -190,6 +176,7 @@
           </li>
         </ul>
       </div>
+
     </div>
   </div>
 
