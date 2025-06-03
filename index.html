@@ -1,221 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skel</title>
-  <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/c4/b2/46/c4b246ca0fbb14b7aedfd3fe36ad3ddc.jpg" />
-  <link rel="manifest" href="/manifest.json" />
-  <meta name="keywords" content="Vanilla Labs, Vanilla, HyperV, Labs, HyperV Labs, Skel" />
-  <meta name="author" content="Skel" />
-  <meta property="og:image" content="" />
-  <meta property="og:description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time." />
-  <meta property="og:title" content="Femboy Skel Runs All Of Com" />
-  <meta name="description" content="Bow before your pixel-perfect prince. Femboy Skel is running skids off the web, one byte at a time." />
-  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="https://i.pinimg.com/736x/c4/b2/46/c4b246ca0fbb14b7aedfd3fe36ad3ddc.jpg" />
   <link rel="stylesheet" href="assets/css/home.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" crossorigin="anonymous" />
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-color: #111;
-      font-family: sans-serif;
-      color: white;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    #enter-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: blur(10px);
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      z-index: 1000;
-      text-align: center;
-      transition: opacity 0.5s ease;
-    }
-
-    #enter-screen h1 {
-      font-size: 28px;
-      color: #ccc;
-      transition: color 0.3s ease;
-    }
-
-    #enter-screen:hover h1 {
-      color: #fff;
-      cursor: pointer;
-    }
-
-    audio {
-      display: none;
-    }
-
-    #profile-image {
-      border-radius: 50%;
-      width: 70px;
-      height: 70px;
-      object-fit: cover;
-      border: none;
-      background: none;
-    }
-
-    #typewriter-text::after {
-      content: '|';
-      animation: blink 1s steps(2, start) infinite;
-      margin-left: 4px;
-    }
-
-    @keyframes blink {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .link-button {
-      padding: 10px 20px;
-      background-color: #333;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      display: inline-block;
-      margin-top: 15px;
-      font-family: Quicksand, Arial, sans-serif;
-    }
-
-    .link-button:hover {
-      background-color: #333;
-      color: #fff;
-      border: 2px solid #fff;
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
-                  0 0 16px rgba(255, 255, 255, 0.8),
-                  0 0 24px rgba(255, 255, 255, 0.7),
-                  0 0 32px rgba(255, 255, 255, 0.6);
-      text-shadow: 0 0 4px #fff, 0 0 8px #fff;
-      transition: all 0.3s ease;
-    }
-
-    #social-contaner {
-      margin-top: 40px;
-    }
-
-    #social-contaner ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    #social-contaner a {
-      color: white;
-      font-size: 24px;
-      transition: color 0.3s ease;
-    }
-
-    #social-contaner a:hover {
-      color: #999;
-    }
-
-    #container {
-      text-align: center;
-      margin-top: 100px;
-    }
-  </style>
 </head>
-
 <body>
-  <audio id="bg-music" loop>
-    <source src="https://files.catbox.moe/zes8s3.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
 
-  <div id="enter-screen" onclick="enterSite()">
-    <h1>人</h1>
+  <!-- Click-to-Enter Screen -->
+  <div class="enter-screen" onclick="enterSite()">
+    <div class="enter-text">click to enter</div>
   </div>
 
-  <div id="container-wrapper" style="filter: blur(5px); pointer-events: none;">
-    <div id="container">
+  <!-- Background Video -->
+  <div class="background-video hidden">
+    <video autoplay muted loop>
+      <source src="https://cdn.pixabay.com/video/2022/08/30/129110-740060377_large.mp4" type="video/mp4" />
+    </video>
+  </div>
 
-      <div id="text-container">
-        <img src="https://r2.guns.lol/c5e889ec-dc0e-44a4-bf7d-7ed56b4f8804.jpg" alt="Profile Image" id="profile-image" />
-        <div id="text-content">
-          <h1>skel</h1>
-          <p id="typewriter-text"></p>
-          <button class="link-button" onclick="window.location.href='gallery/'">Go to Gallery</button>
-        </div>
+  <!-- Main Content -->
+  <div class="glass-container hidden">
+    <div class="profile-header">
+      <img src="https://r2.guns.lol/c5e889ec-dc0e-44a4-bf7d-7ed56b4f8804.jpg" class="profile-pic" alt="Profile">
+      <div class="icons">
+        <i class="fas fa-cross"></i>
+        <i class="fas fa-gem"></i>
       </div>
+    </div>
 
-      <hr />
+    <div class="stats">
+      <i class="fas fa-eye"></i> <span>68</span>
+    </div>
 
-      <div id="social-contaner">
-        <ul>
-          <li>
-            <a href="https://www.tiktok.com/@linuxlarp" target="_blank" aria-label="tiktok-link">
-              <i class="fab fa-tiktok"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://discord.gg/pal" target="_blank" aria-label="discord-link">
-              <i class="fab fa-discord"></i>
-            </a>
-          </li>
-        </ul>
+    <div class="social-icons">
+      <a href="https://discord.gg/pal" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://t.me/" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://www.tiktok.com/@linuxlarp" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+    <div class="audio-player">
+      <i class="fas fa-music"></i>
+      <div class="track-info">
+        <span class="track-title">kil yourself</span>
+        <audio id="audio" controls autoplay>
+          <source src="https://files.catbox.moe/zes8s3.mp3" type="audio/mpeg" />
+        </audio>
       </div>
-
     </div>
   </div>
 
   <script>
-    const text = "Hot Sexy Femboy That Runs All Of Com.";
-    const typewriterText = document.getElementById('typewriter-text');
-    let index = 0;
-
-    function typeWriter() {
-      if (index < text.length) {
-        typewriterText.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 100);
-      }
-    }
-
     function enterSite() {
-      const enterScreen = document.getElementById('enter-screen');
-      const wrapper = document.getElementById('container-wrapper');
-      const music = document.getElementById('bg-music');
-
-      enterScreen.style.opacity = '0';
-      setTimeout(() => enterScreen.style.display = 'none', 500);
-
-      wrapper.style.pointerEvents = 'auto';
-      wrapper.style.filter = 'none';
-      document.body.style.overflow = 'auto';
-
-      music.volume = 0.5;
-      music.play().catch(e => {
-        console.log("Autoplay blocked by browser. User interaction is required.");
-      });
-
-      typeWriter();
+      document.querySelector('.enter-screen').style.display = 'none';
+      document.querySelector('.background-video').classList.remove('hidden');
+      document.querySelector('.glass-container').classList.remove('hidden');
+      document.getElementById('audio').play();
     }
   </script>
 
-  <script src="assets/js/home.js"></script>
-  <script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
 </body>
-
 </html>
