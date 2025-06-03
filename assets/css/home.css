@@ -1,103 +1,172 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Single+Day&display=swap');
-@import url('https://cdn.imzuxi.com/assets/fonts/fonts.css');
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Single+Day);
+@import url(https://cdn.imzuxi.com/assets/fonts/fonts.css);
 
-/* Reset and base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+body,
+p {
+    margin: 0
 }
 
-html, body {
-    height: 100%;
-    font-family: Quicksand, Arial, sans-serif;
-    background-color: #222;
-    color: #fff;
-    overflow: hidden;
+#VIDEO,
+body {
+    height: 100vh
 }
 
-/* Video background */
-#VIDEO {
-    position: fixed;
+#VIDEO,
+ul li a::before {
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
+    z-index: -1
 }
 
-/* Main container */
+.additional-box,
+.full-width-box {
+    background-color: #333;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    color: #FFFFFF
+}
+
+#noscript,
+#zuxiheader {
+    background: rgba(0, 0, 0, .8);
+    z-index: 1000
+}
+
+.container,
+ul li a {
+    text-align: center
+}
+
+a,
+a:hover {
+    text-decoration: none
+}
+
+body {
+    background-color: #222;
+    font-family: Quicksand, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://r2.guns.lol/e72f544e-20a7-42fb-97b6-4e6e7aeed67f.mp4') center center fixed;
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed
+}
+
 #container {
-    position: relative;
+    font-family: Quicksand,  monospace;
     width: 90%;
     max-width: 1200px;
-    max-height: 90vh;
     margin: auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.65);
-    border-radius: 12px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    max-height: 90vh; /* or remove height entirely */
+    background-color: #000000a1;
+    border-radius: 10px;
+    overflow-y: visible;
+    padding: 10px;
     scroll-behavior: smooth;
+    color: #FFFFFF;
+    overflow-x: hidden
 }
 
-/* Scrollbar */
 #container::-webkit-scrollbar {
-    width: 5px;
+    width: 5px
+}
+
+#container::-webkit-scrollbar-track {
+    background: #33333300
 }
 
 #container::-webkit-scrollbar-thumb {
-    background-color: #444;
+    background-color: #22222200;
     border-radius: 20px;
+    border: 3px solid #33333300
 }
 
-/* Header */
-h1 {
-    font-size: 36px;
-    font-family: "Merriweather", serif;
-    margin-bottom: 10px;
+#container-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column
 }
 
-/* Paragraphs */
-p {
-    font-size: 16px;
-    font-family: 'Single Day', cursive;
-}
-
-/* Profile image */
 #profile-image {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 4px solid #333;
+    border: 4px solid #333
 }
 
-/* Text container layout */
 #text-container {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-right: 10px
 }
 
 #text-content {
-    margin-left: 10px;
+    margin-left: 10px
 }
 
-/* Social icons */
+h1 {
+    font-size: 36px;
+    margin-bottom: 5px
+}
+
+p {
+    font-size: 16px
+}
+
+hr {
+    border: 1px solid #555;
+    width: 100%;
+    margin: 10px 0
+}
+
+ul li a,
+ul li a::before {
+    border-radius: 50%;
+    transition: .5s
+}
+
+.additional-box h2,
+.additional-box p,
 ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0
+}
+
+.social-contaner {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -100px;
+    margin-left: -100px
+}
+
+.glitch,
+ul,
+ul li a {
+    position: relative
+}
+
+ul {
     padding: 0;
-    margin-top: 20px;
-    gap: 10px;
-    flex-wrap: wrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
 }
 
 ul li {
     list-style: none;
+    margin: 0 4px
 }
 
 ul li a {
@@ -106,94 +175,251 @@ ul li a {
     height: 60px;
     line-height: 63px;
     background: #333;
-    color: #fff;
     font-size: 30px;
-    text-align: center;
-    border-radius: 50%;
-    position: relative;
-    transition: 0.3s;
+    color: #FFFFFF
 }
 
 ul li a::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
-    border-radius: 50%;
-    transform: scale(0.9);
-    z-index: -1;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-ul li a:hover {
-    box-shadow: 0 0 5px #fff;
-    text-shadow: 0 0 5px #fff;
+    background: #FFFFFF;
+    transform: scale(.9)
 }
 
 ul li a:hover::before {
     transform: scale(1.1);
-    box-shadow: 0 0 15px #fff;
+    box-shadow: 0 0 15px #FFFFFF
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    #container {
-        width: 95%;
-        padding: 15px;
-    }
+ul li a:hover {
+    color: #FFFFFF;
+    box-shadow: 0 0 5px #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF
+}
 
+#VIDEO {
+    object-fit: cover;
+    width: 100vw;
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed
+}
+
+.additional-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px
+}
+
+.additional-box {
+    width: 48%;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center
+}
+
+.box-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 10px
+}
+
+.box-content,
+.progress-details {
+    flex-grow: 1
+}
+
+.small-text {
+    font-size: 12px
+}
+
+.full-width-box {
+    width: 98%;
+    height: 20%;
+    border-radius: 10px;
+    padding: 12px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center
+}
+
+@media (max-width:1300px) {
+    .additional-box {
+        width: 100%;
+        margin-right: 0
+    }
+}
+
+@media only screen and (max-width:600px) {
     ul {
-        flex-direction: column;
+        width: 1%;
+        top: 10%;
+        transform: none
     }
 
-    ul li a {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        line-height: 53px;
+    ul li {
+        margin: 10px 0
+    }
+
+    #VIDEO,
+    .mobile-hidden {
+        display: none
+    }
+
+    .additional-box {
+        width: 100%
+    }
+
+    .full-width-box {
+        width: 92%
     }
 }
 
-/* Glitch effect */
+.progress-bar {
+    width: 99%;
+    height: 10px;
+    background-color: #555;
+    border-radius: 5px;
+    margin-top: 10px
+}
+
+.progress-indicator {
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    width: 0;
+    transition: width 1s
+}
+
+#noscript,
+#zuxiheader,
+.progress-content {
+    width: 100%;
+    display: flex
+}
+
+.progress-content {
+    align-items: center;
+    justify-content: space-between
+}
+
+.progress-image {
+    width: 90px;
+    height: 90px;
+    margin-right: 10px
+}
+
+.progress-times {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between
+}
+
+#progress-current-time,
+#progress-total-time {
+    font-size: 14px;
+    color: #FFFFFF
+}
+
+.invisible {
+    background-color: #00000000;
+    height: 5px
+}
+
+#noscript {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    justify-content: center;
+    align-items: center
+}
+
+#zuxiheader,
+.glitch span {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+#zuxiheader {
+    height: 160%;
+    justify-content: center;
+    align-items: center;
+    animation: 3s ease-in-out forwards moveLogo
+}
+
+@keyframes moveLogo {
+    0% {
+        top: -300px
+    }
+
+    100% {
+        background: rgba(0, 0, 0, 0);
+        top: -68vh
+    }
+}
+
 .glitch {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 700;
     text-transform: uppercase;
-    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00;
-    animation: glitch 750ms infinite;
-    position: relative;
+    text-shadow: .05em 0 0 #00fffc, -.03em -.04em 0 #fc00ff, .025em .04em 0 #fffc00;
+    animation: 725ms infinite glitch
 }
 
 .glitch span:first-child {
-    animation: glitch 500ms infinite;
+    animation: .5s infinite glitch;
     clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
     transform: translate(-.04em, -.03em);
-    opacity: .75;
-    position: absolute;
+    opacity: .75
 }
 
 .glitch span:last-child {
-    animation: glitch 375ms infinite;
+    animation: 375ms infinite glitch;
     clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
     transform: translate(.04em, .03em);
-    opacity: .75;
-    position: absolute;
+    opacity: .75
 }
 
 @keyframes glitch {
-    0%, 15% {
-        text-shadow: .05em 0 0 #00fffc, -.03em -.04em 0 #fc00ff, .025em .04em 0 #fffc00;
+
+    0%,
+    15% {
+        text-shadow: .05em 0 0 #00fffc, -.03em -.04em 0 #fc00ff, .025em .04em 0 #fffc00
     }
-    16%, 49% {
-        text-shadow: -.05em -.025em 0 #00fffc, .025em .035em 0 #fc00ff, -.05em -.05em 0 #fffc00;
+
+    16%,
+    49% {
+        text-shadow: -.05em -.025em 0 #00fffc, .025em .035em 0 #fc00ff, -.05em -.05em 0 #fffc00
     }
-    50%, 99% {
-        text-shadow: .05em .035em 0 #00fffc, .03em 0 0 #fc00ff, 0 -.04em 0 #fffc00;
+
+    50%,
+    99% {
+        text-shadow: .05em .035em 0 #00fffc, .03em 0 0 #fc00ff, 0 -.04em 0 #fffc00
     }
+
     100% {
-        text-shadow: -.05em 0 0 #00fffc, -.025em -.04em 0 #fc00ff, -.04em -.025em 0 #fffc00;
+        text-shadow: -.05em 0 0 #00fffc, -.025em -.04em 0 #fc00ff, -.04em -.025em 0 #fffc00
     }
+}
+
+a {
+    color: #b5b5be;
+    background-color: transparent
+}
+
+a:hover {
+    color: var(--theme-color)
+}
+
+a:not([href]),
+a:not([href]):hover {
+    color: inherit;
+    text-decoration: none
 }
