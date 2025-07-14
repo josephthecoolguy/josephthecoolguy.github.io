@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" as="image" href="https://files.catbox.moe/pk6fhk.jpg">
-    <link rel="stylesheet" href="css/33cd60ccabffe20a.css" data-precedence="next">
-    <link rel="stylesheet" href="css/11999634b1bc477a.css" data-precedence="next">
-    <link rel="stylesheet" href="css/4c1a83e784be31e5.css" data-precedence="next">
+    <link rel="stylesheet" href="css/33cd60ccabffe20a.css">
+    <link rel="stylesheet" href="css/11999634b1bc477a.css">
+    <link rel="stylesheet" href="css/4c1a83e784be31e5.css">
+
     <link rel="preload" as="script" fetchpriority="low" href="/_next/static/chunks/webpack-c49c703ef40b683a.js">
     <script src="js/4bd1b696-5cc00fdd89cac993.js" async=""></script>
     <script src="js/1684-ccd0ab83cbafdc8f.js" async=""></script>
@@ -26,8 +27,10 @@
     <script src="js/8011-a348fbeef4351322.js" async=""></script>
     <script src="js/1090-c25af56883c9839d.js" async=""></script>
     <script src="js/page-38552e58254d8e61.js" async=""></script>
+
     <link rel="preload" href="https://sa.guns.lol/latest.js" as="script">
     <link rel="preload" href="https://assets.guns.lol/cursor-effects.js" as="script">
+
     <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/0d/69/12/0d69125511e91ff3991a7ad9bf7ddd9c.jpg">
     <link rel="manifest" href="https://i.pinimg.com/736x/0d/69/12/0d69125511e91ff3991a7ad9bf7ddd9c.jpg">
     <meta name="theme-color" content="#194c4c">
@@ -44,6 +47,7 @@
     <meta name="twitter:description" content="fat nigga femboy">
     <meta name="twitter:image" content="https://files.catbox.moe/lfzlhx.jpg">
     <script>
+        // This script moves icon links from body to head. It's a common practice.
         document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el));
     </script>
     <script src="js/polyfills-42372ed130431b0a.js" nomodule=""></script>
@@ -54,6 +58,7 @@
         <div class="lnl3Vm_dbdc0f63fcf9ce25e8c2" style="font-weight:700;font-size:29px">人</div>
     </div>
     <div class="hcNwUt_326d554dc9e3864a2bdd"></div>
+
     <script>
         (self.__next_s = self.__next_s || []).push(["https://assets.guns.lol/cursor-effects.js", { "id": "_cursor" }]);
     </script>
@@ -226,10 +231,39 @@
                         </div>
                         <div class="rlyXF0_a2d3df8100dabb56d217 oJYZnX_9067b81027f5ba6fb637 sFxZy0_b7e5cf8d0fc76e9c053f" style="bottom:27px;left:30px">
                             <script>
-                                (self.__next_s = self.__next_s || []).push([0, {
-                                    "children": "\n        const workerScript = `        \n            import init, { GunsSolver } from 'https://assets.guns.lol/pkg/_gunslolpow.js';\n            self.onmessage = async function (event) {                \n                const { ps, d, c, _n, org_ts } = event.data;\n                await init();\n                const _get_s = new GunsSolver(ps, c, parseInt(d), false, _n);\n                const ts = Math.floor(Date.now() / 1000);\n                const _tsoff = ts - Number(org_ts);\n                const tsp = ts - _tsoff;\n                const _res = await _get_s.solve_pow();    \n                if (_res !== null) {\n                    self.postMessage({ _res, ps, tsp, _n, c });\n                }\n            };\n        `;\n\n        const blob = new Blob([workerScript], { type: \"application/javascript\" });\n        const worker = new Worker(URL.createObjectURL(blob), { type: \"module\" });\n\n        worker.postMessage({\n            ps: '245e74cdeb7549fb7d7b290fcb7b3759eed48332ba314a9f31e69642b33',\n            d: '5',\n            c: 'fc695dded170cfaaf3d91984581e77a6df2464d794ab64ac3402dda476c0734a',\n            _n: 'uo8c1NaxYis3BSJ3',\n            org_ts: '1749027300'\n        });\n\n        worker.onmessage = async function (event) {\n            const { _res, ps, tsp, _n, c } = event.data;\n            if (_res !== undefined) {\n                await getResult(_res);\n            }\n        };\n    ",
-                                    "id": "_code"
-                                }]);
+                                const workerScript = `
+                                    import init, { GunsSolver } from 'https://assets.guns.lol/pkg/_gunslolpow.js';
+                                    self.onmessage = async function (event) {
+                                        const { ps, d, c, _n, org_ts } = event.data;
+                                        await init();
+                                        const _get_s = new GunsSolver(ps, c, parseInt(d), false, _n);
+                                        const ts = Math.floor(Date.now() / 1000);
+                                        const _tsoff = ts - Number(org_ts);
+                                        const tsp = ts - _tsoff;
+                                        const _res = await _get_s.solve_pow();
+                                        if (_res !== null) {
+                                            self.postMessage({ _res, ps, tsp, _n, c });
+                                        }
+                                    };
+                                `;
+
+                                const blob = new Blob([workerScript], { type: "application/javascript" });
+                                const worker = new Worker(URL.createObjectURL(blob), { type: "module" });
+
+                                worker.postMessage({
+                                    ps: '245e74cdeb7549fb7d7b290fcb7b3759eed48332ba314a9f31e69642b33',
+                                    d: '5',
+                                    c: 'fc695dded170cfaaf3d91984581e77a6df2464d794ab64ac3402dda476c0734a',
+                                    _n: 'uo8c1NaxYis3BSJ3',
+                                    org_ts: '1749027300'
+                                });
+
+                                worker.onmessage = async function (event) {
+                                    const { _res, ps, tsp, _n, c } = event.data;
+                                    if (_res !== undefined) {
+                                        await getResult(_res);
+                                    }
+                                };
                             </script>
                             <div class="n5FwY9_599d5ef2ae281840bef2 sFxZy0_b7e5cf8d0fc76e9c053f" style="bottom:12px;left:15px">
                                 <span style="font-weight:550;font-size:14px">
@@ -270,5 +304,5 @@
     <script>
         self.__next_f.push([1, "f:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"2\",{\"name\":\"theme-color\",\"content\":\"#194c4c\"}]]\na:null\n"]);
     </script>
-    </body>
+</body>
 </html>
