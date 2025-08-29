@@ -53,6 +53,33 @@
     <script src="js/polyfills-42372ed130431b0a.js" nomodule=""></script>
 </head>
 <body>
+    <button class="top-right-btn custom-btn">Button Text</button>
+
+<style>
+.top-right-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.custom-btn {
+    background: var(--buttonBackground);
+    border: var(--buttonBorder);
+    border-radius: var(--buttonRadius);
+    color: var(--buttonUrlColor);
+    padding: 10px 20px;
+    cursor: url(images/8210afc4-e853-490a-9b0d-71a6324589c1.png) 16 16, auto !important;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 550;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    background: var(--buttonBackgroundHover);
+    border: var(--buttonBorderHover);
+}
+</style>
     <div class="cN529Y_244378cdd5913f278c3a" style="background-image:url(media/e72f544e-20a7-42fb-97b6-4e6e7aeed67f.mp4)"></div>
     <div class="fRNkr3_4ac5c10f247eb261df8a">
         <div class="lnl3Vm_dbdc0f63fcf9ce25e8c2" style="font-weight:700;font-size:29px">人</div>
@@ -306,3 +333,4 @@
     </script>
 </body>
 </html>
+
