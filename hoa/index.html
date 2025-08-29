@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Hall of Autism — Femboy Furry LGBTQ Gallery</title>
-  <meta name="description" content="A community gallery: femboy, furry, LGBTQ+ friendly. 18+ only."> 
+  <meta name="description" content="A community gallery: femboy, furry, LGBTQ+ friendly."> 
   <link rel="canonical" href="https://ageplaying.com/hoa/">
   <style>
     :root{--bg:#0f0f12;--card:#121217;--accent:#ff7ad1;--muted:#9aa0a6;--glass: rgba(255,255,255,0.03)}
@@ -16,44 +16,19 @@
     .container{max-width:1150px;margin:18px auto;padding:0 20px}
     .hero{background:linear-gradient(90deg, rgba(255,122,209,0.06), rgba(122,197,255,0.02));border-radius:14px;padding:18px;display:flex;justify-content:space-between;align-items:center;gap:12px}
     .hero .left{max-width:70%}
-    .gallery-controls{display:flex;gap:8px;align-items:center}
-    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:inherit;cursor:pointer}
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:18px}
     .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
     .card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
     .meta{display:flex;justify-content:space-between;margin-top:8px;font-size:0.85rem;color:var(--muted)}
     footer{padding:28px 20px;color:var(--muted);font-size:0.85rem}
-    .age-gate, .tos-modal{position:fixed;inset:0;background:rgba(2,6,12,0.8);display:flex;align-items:center;justify-content:center;z-index:9999}
-    .gate-card{background:linear-gradient(180deg,#0b0f13,#0c0e10);padding:28px;border-radius:14px;max-width:720px;width:92%;box-shadow:0 10px 30px rgba(2,6,12,0.7);border:1px solid rgba(255,255,255,0.03)}
-    .gate-card h2{margin:0 0 8px 0;color:var(--accent)}
-    .gate-card p{margin:0 0 18px;color:var(--muted)}
-    .form-row{display:flex;gap:8px;align-items:center}
-    .input{background:#0b0b0f;border:1px solid rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;color:inherit}
-    .notice{background:rgba(255,122,209,0.06);padding:8px;border-radius:8px;margin-top:12px;color:var(--muted)}
     @media (max-width:600px){.card img{height:140px}}
   </style>
 </head>
 <body>
-  <div class="age-gate" id="ageGate">
-    <div class="gate-card" role="dialog" aria-labelledby="gateTitle" aria-modal="true">
-      <h2 id="gateTitle">Adult Content — 18+ Only</h2>
-      <p>This community gallery is for consenting adults. By continuing you confirm you are 18 years or older and will not submit or upload sexual content involving minors or non-consenting parties. Ageplay content that depicts adults roleplaying is allowed only where all participants are legal adults.</p>
-      <div class="form-row">
-        <button class="btn" id="confirmAge">I am 18+</button>
-        <button class="btn" id="leaveBtn">Leave</button>
-      </div>
-      <div class="notice">Do not upload illegal content (CSAM, sexual content involving minors, revenge porn, or non-consensual material). All uploads are moderated.</div>
-    </div>
-  </div>
-
   <header class="container">
     <div>
       <div class="logo">Hall of Autism</div>
       <div class="sub">femboy • furry • LGBTQ+ gallery — community-run</div>
-    </div>
-    <div style="margin-left:auto" class="gallery-controls">
-      <button class="btn" id="uploadBtn">Upload (moderated)</button>
-      <button class="btn" id="filterBtn">Filters</button>
     </div>
   </header>
 
@@ -61,7 +36,7 @@
     <section class="hero">
       <div class="left">
         <h1 style="margin:0 0 6px 0">Welcome — Hall of Autism</h1>
-        <p class="sub">A safe space for femboy, furry, and LGBTQ+ art & photos. Tag your posts with pronouns, kinks, and content warnings. Keep content legal and consensual.</p>
+        <p class="sub">A space for femboy, furry, and LGBTQ+ art & photos. This is a simple static gallery. Just replace the image links in the code with your own to update the gallery.</p>
       </div>
       <div style="text-align:right">
         <div style="font-size:0.9rem;color:var(--muted)">Ready for: <strong>ageplaying.com/hoa</strong></div>
@@ -85,23 +60,11 @@
   </main>
 
   <footer class="container">
-    <div>Site template — customize with your own images. All image uploads must be 18+. Maintain moderation + reporting links.</div>
-    <div style="margin-top:8px;color:var(--muted)">Suggested: add server-side moderation, CAPTCHA on uploads, and a DMCA/reporting flow.</div>
+    <div>Site template — customize with your own images. No database required, just edit the image list in the script.</div>
   </footer>
 
   <script>
-    // --- Age gate ---
-    const ageGate = document.getElementById('ageGate');
-    document.getElementById('confirmAge').addEventListener('click', ()=>{
-      localStorage.setItem('hoa_age_ok','1');
-      ageGate.style.display='none';
-    });
-    document.getElementById('leaveBtn').addEventListener('click', ()=>{
-      window.location.href='https://google.com';
-    });
-    if(localStorage.getItem('hoa_age_ok')==='1') ageGate.style.display='none';
-
-    // --- Gallery sample data (replace with real image paths) ---
+    // --- Gallery sample data (replace with your own image paths) ---
     const sample = [
       {src:'https://placehold.co/600x400?text=Femboy+Furry+1', title:'Neko soft', tag:'art'},
       {src:'https://placehold.co/600x400?text=Femboy+Furry+2', title:'Pastel fit', tag:'photo'},
@@ -122,19 +85,6 @@
       });
     }
     render(sample);
-
-    // --- Upload button (client-only placeholder) ---
-    document.getElementById('uploadBtn').addEventListener('click', ()=>{
-      alert('Uploads are moderated. Implement server-side upload endpoint and moderation before enabling. Do NOT allow CSAM or underage content.');
-    });
-
-    // Accessibility: keyboard focus trap for modal if visible
-    document.addEventListener('keydown', (e) => {
-      if(ageGate.style.display!=='none' && e.key === 'Tab'){
-        e.preventDefault();
-        document.getElementById('confirmAge').focus();
-      }
-    });
   </script>
 </body>
 </html>
