@@ -66,8 +66,8 @@
     .card:hover { transform:scale(1.03); }
     .card img {
       width:100%;
-      height:200px;
-      object-fit:cover;
+      height:auto;       /* let image adapt naturally */
+      object-fit:contain;/* keep full image visible */
       display:block;
     }
     .meta {
@@ -82,9 +82,6 @@
       text-align:center;
       color:var(--muted);
       font-size:0.85rem;
-    }
-    @media(max-width:600px){
-      .card img { height:150px; }
     }
   </style>
 </head>
