@@ -1,98 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hall of Autism</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hall of Autism — LGBTQ+ Femboy Furry Gallery</title>
+  <meta name="description" content="A colorful gallery space for LGBTQ+, femboy, and furry expression.">
   <style>
-    :root {
-      --bg: #1e1b29;
-      --card: #2a2438;
-      --text: #fff;
-      --accent: #ff9bd2;
+    :root{
+      --bg:#120d1c;
+      --card:#1b1530;
+      --muted:#b8b5c0;
+      --accent1:#ff7ad1;
+      --accent2:#7ad1ff;
+      --accent3:#baff7a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,#14061a 0%, #0f0f12 100%);
+      color:#eceff6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    body {
-      margin: 0;
-      font-family: "Comic Sans MS", cursive, sans-serif;
-      background: linear-gradient(135deg, #ffdee9, #b5fffc);
-      color: var(--text);
-      text-align: center;
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+
+    header{padding:28px 0;text-align:center}
+    .logo{font-weight:900;font-size:1.8rem;letter-spacing:0.4px;background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .sub{color:var(--muted);margin-top:6px}
+
+    .hero{background:linear-gradient(90deg, rgba(255,122,209,0.06), rgba(122,209,255,0.03), rgba(186,255,122,0.04));border-radius:12px;padding:18px;margin:10px 0 20px;text-align:center}
+    .hero h1{margin:0 0 6px;font-size:1.4rem}
+    .hero p{margin:0;color:var(--muted)}
+
+    /* Flexible wrapping grid where each card sizes to its image */
+    .grid{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start;justify-content:flex-start}
+
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.04);
+      transition:transform .14s ease;
+      display:inline-flex;           /* shrink-to-fit */
+      flex-direction:column;
+      width:auto;                    /* important: let the content define width */
+    }
+    .card:hover{transform:translateY(-6px)}
+
+    /* Image: use natural size but scale down if too wide */
+    .card img{
+      display:block;
+      width:auto;               /* allow natural width */
+      height:auto;              /* preserve aspect ratio */
+      max-width:320px;         /* scale down very large images */
+      max-height:600px;        /* avoid extremely tall images stretching page */
     }
 
-    header {
-      padding: 2rem;
-      font-size: 2.5rem;
-      font-weight: bold;
-      background: linear-gradient(to right, #ff9bd2, #9bbdff, #9bffcd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    /* meta strip sits below image */
+    .meta{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;font-size:0.9rem;color:var(--muted)}
 
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      padding: 20px;
-    }
+    footer{text-align:center;padding:18px;color:var(--muted);font-size:0.88rem}
 
-    .card {
-      background: var(--card);
-      border-radius: 14px;
-      overflow: hidden;
-      border: 2px solid rgba(255,255,255,0.1);
-      transition: transform 0.2s;
-      display: inline-block;
-      width: auto;
-      height: auto;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .card img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    .meta {
-      padding: 8px;
-      font-size: 0.9rem;
-      color: #ccc;
-      display: flex;
-      justify-content: space-between;
+    /* responsive rules */
+    @media (max-width:720px){
+      .grid{justify-content:center}
+      .card img{max-width:86vw}
     }
   </style>
 </head>
 <body>
-  <header>🏳️‍⚧️🌈 Femboy Furry LGBTQ Gallery 🌈🏳️‍⚧️</header>
+  <header class="container">
+    <div class="logo">Hall of Autism</div>
+    <div class="sub">A friendly LGBTQ+ femboy &amp; furry gallery</div>
+  </header>
 
-  <div class="grid" id="gallery"></div>
+  <main class="container">
+    <section class="hero">
+      <h1>Welcome</h1>
+      <p>Drop your images by editing the list in the script — each card will size itself to the image.</p>
+    </section>
+
+    <section id="gallery">
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    Made with ❤️ for the community
+  </footer>
 
   <script>
+    // Replace or extend this array with your own image URLs and labels
     const sample = [
-      {src: "https://placekitten.com/300/200", title: "Fursona art", tag: "furry"},
-      {src: "https://placekitten.com/400/300", title: "Pride vibes", tag: "LGBTQ"},
-      {src: "https://placekitten.com/350/250", title: "Cute femboy", tag: "pastel"}
+      {src:'https://files.catbox.moe/p6viyp.png', title:'Soft look', tag:'femboy'},
+      {src:'https://files.catbox.moe/a43rjc.png', title:'Fursona art', tag:'furry'},
+      {src:'https://placehold.co/600x400/baff7a/000?text=LGBTQ+', title:'Rainbow pride', tag:'lgbtq'},
+      {src:'https://placehold.co/400x800/ffb27a/000?text=Tall+art', title:'Tall piece', tag:'art'}
     ];
 
-    const gallery = document.getElementById("gallery");
+    const grid = document.getElementById('grid');
 
-    sample.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
-        <img src="${item.src}" alt="${item.title}">
-        <div class="meta">
-          <span>${item.title}</span>
-          <span>${item.tag}</span>
-        </div>
-      `;
-      gallery.appendChild(card);
-    });
+    function makeCard(item){
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      // create image element and meta
+      const img = document.createElement('img');
+      img.src = item.src;
+      img.alt = item.title || '';
+
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      meta.innerHTML = `<span>${item.title || ''}</span><span>${item.tag || ''}</span>`;
+
+      card.appendChild(img);
+      card.appendChild(meta);
+
+      return card;
+    }
+
+    // render
+    sample.forEach(it => grid.appendChild(makeCard(it)));
+
+    // Optional: if you want columns to align their tops even when images load slowly,
+    // you can add `align-items:flex-start` to .grid (already set) - no extra JS required.
   </script>
 </body>
 </html>
