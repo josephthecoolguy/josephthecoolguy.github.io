@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terry</title>
+
+  <!-- Discord / Open Graph preview -->
+  <meta property="og:title" content="Terry Video">
+  <meta property="og:description" content="terry davis is a god">
+  <meta property="og:image" content="https://files.catbox.moe/i1ydoi.jpg"> <!-- Replace with your uploaded image URL -->
+  <meta property="og:url" content="https://ageplaying.com/terry">
+  <meta property="og:type" content="website">
+
   <style>
     html, body {
       margin: 0;
@@ -12,27 +20,37 @@
       width: 100%;
       background: #000;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
     }
     video {
       width: 100%;
-      height: 100%;
+      max-width: 800px;
+      height: auto;
       object-fit: cover;
+    }
+    img {
+      max-width: 300px;
+      margin-top: 20px;
+      border: 2px solid #fff;
     }
   </style>
 </head>
 <body>
+  <!-- Video -->
   <video id="terryVideo" loop playsinline controls>
     <source src="https://files.catbox.moe/hve9if.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
+  <!-- Thumbnail image -->
+  <img src="https://ageplaying.com/terry-thumbnail.jpg" alt="Terry Thumbnail">
+
   <script>
     const video = document.getElementById('terryVideo');
 
-    // Try autoplay after user interaction (required by most mobile browsers)
     function startVideo() {
       video.play().catch(() => {
         console.log("Autoplay blocked. Tap to play the video.");
@@ -40,13 +58,11 @@
       video.removeEventListener('click', startVideo);
     }
 
-    // If autoplay fails, let user click anywhere to start
     video.addEventListener('click', startVideo);
 
-    // Attempt to autoplay muted first (most browsers allow this)
     video.muted = true;
     video.play().then(() => {
-      video.muted = false; // unmute if allowed
+      video.muted = false;
     }).catch(() => {
       console.log("Muted autoplay not allowed.");
     });
