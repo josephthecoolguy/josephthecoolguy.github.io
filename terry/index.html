@@ -19,12 +19,12 @@
     video {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Fill screen without distortion */
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <video id="terryVideo" autoplay muted loop playsinline>
+  <video id="terryVideo" loop playsinline controls>
     <source src="https://files.catbox.moe/hve9if.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -32,16 +32,23 @@
   <script>
     const video = document.getElementById('terryVideo');
 
-    // Try to unmute automatically
-    video.addEventListener('canplay', () => {
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          video.muted = false; // Attempt to unmute
-        }).catch((err) => {
-          console.log('Autoplay with audio blocked, user interaction required.');
-        });
-      }
+    // Try autoplay after user interaction (required by most mobile browsers)
+    function startVideo() {
+      video.play().catch(() => {
+        console.log("Autoplay blocked. Tap to play the video.");
+      });
+      video.removeEventListener('click', startVideo);
+    }
+
+    // If autoplay fails, let user click anywhere to start
+    video.addEventListener('click', startVideo);
+
+    // Attempt to autoplay muted first (most browsers allow this)
+    video.muted = true;
+    video.play().then(() => {
+      video.muted = false; // unmute if allowed
+    }).catch(() => {
+      console.log("Muted autoplay not allowed.");
     });
   </script>
 </body>
