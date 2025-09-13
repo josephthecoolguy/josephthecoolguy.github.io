@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terry</title>
 
-  <!-- Open Graph video meta tags -->
+  <!-- Open Graph / Discord Meta Tags -->
   <meta property="og:title" content="Terry Video">
   <meta property="og:description" content="Terry Davis is a god">
   <meta property="og:image" content="https://files.catbox.moe/i1ydoi.jpg">
-  <meta property="og:url" content="https://ageplaying.com/terryandrewdavis">
+  <meta property="og:url" content="https://ageplaying.com/terry">
   <meta property="og:type" content="video.other">
-  <meta property="og:video" content="https://files.catbox.moe/rro2ub.mp4">
+  <meta property="og:video" content="https://files.catbox.moe/hve9if.mp4">
   <meta property="og:video:type" content="video/mp4">
   <meta property="og:video:width" content="1280">
   <meta property="og:video:height" content="720">
@@ -24,52 +24,43 @@
       width: 100%;
       background: #000;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
     }
     video {
       width: 100%;
-      max-width: 800px;
-      height: auto;
+      height: 100%;
       object-fit: cover;
-    }
-    img {
-      max-width: 300px;
-      margin-top: 20px;
-      border: 2px solid #fff;
     }
   </style>
 </head>
 <body>
-  <!-- Video -->
-  <video id="terryVideo" loop playsinline controls>
+  <video id="terry" loop playsinline controls>
     <source src="https://files.catbox.moe/hve9if.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Thumbnail image -->
-  <img src="https://ageplaying.com/terry-thumbnail.jpg" alt="Terry Thumbnail">
-
   <script>
-    const video = document.getElementById('terryVideo');
+    const video = document.getElementById('terry');
 
+    // Attempt autoplay muted first
+    video.muted = true;
+    video.play().then(() => {
+      video.muted = false; // unmute if allowed
+    }).catch(() => {
+      console.log("Muted autoplay blocked. Tap to play.");
+    });
+
+    // Click-to-play fallback for mobile/autoplay-blocked browsers
     function startVideo() {
       video.play().catch(() => {
-        console.log("Autoplay blocked. Tap to play the video.");
+        console.log("Video still blocked, user interaction required.");
       });
       video.removeEventListener('click', startVideo);
     }
 
     video.addEventListener('click', startVideo);
-
-    video.muted = true;
-    video.play().then(() => {
-      video.muted = false;
-    }).catch(() => {
-      console.log("Muted autoplay not allowed.");
-    });
   </script>
 </body>
 </html>
