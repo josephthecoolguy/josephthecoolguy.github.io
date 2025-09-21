@@ -4,6 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terry Davis</title>
+
+  <!-- Open Graph / Discord Meta Tags -->
+  <meta property="og:title" content="Terry Video">
+  <meta property="og:description" content="Terry Davis is a god">
+  <meta property="og:image" content="https://files.catbox.moe/dc932y.mp4">
+  <meta property="og:url" content="https://ageplaying.com/terrydavis">
+  <meta property="og:type" content="video.other">
+  <meta property="og:video" content="https://files.catbox.moe/dc932y.mp4">
+  <meta property="og:video:type" content="video/mp4">
+  <meta property="og:video:width" content="1280">
+  <meta property="og:video:height" content="720">
+
   <style>
     html, body {
       margin: 0;
@@ -24,13 +36,13 @@
   </style>
 </head>
 <body>
-  <video id="terryDavisVideo" loop playsinline controls>
+  <video id="terry" loop playsinline controls>
     <source src="https://files.catbox.moe/dc932y.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
   <script>
-    const video = document.getElementById('terryDavisVideo');
+    const video = document.getElementById('terry');
 
     // Attempt autoplay muted first
     video.muted = true;
